@@ -1,0 +1,43 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile that brings up a SNC using either VirtualBox (free) or VMware Fusion (paid license required)
+# The only piece that needs to be updated here is the IP address. You can try it as is, but if you hit an error for network conflict, update it.
+
+# Box settings
+Vagrant.configure("2") do |config|
+
+  # Set up the VMware provider
+  config.vm.provider "vmware_fusion" do |vmware|
+    vmware.vmx["ethernet0.pcislotnumber"] = "32" # Needed for setting up vmware fusion
+    vmware.whitelist_verified = true
+    vmware.gui = false
+    vmware.memory = 4096
+    vmware.cpus = 2
+  end
+
+# Set up the Virtual Box provider
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
+    vb.memory = 4096
+    vb.cpus = 2
+  end
+
+  # Use a CentOS 7 base box
+  config.vm.box = "centos/7"
+
+  # Set up shared folder
+  config.vm.synced_folder '../../common-shared/', '/vagrant', disabled: false
+
+  # Assign IP address
+  config.vm.network "private_network", ip: ENV['PCE_IP_ADDRESS'] # Comment this line if using vagrant directly (not launcher script)
+  # config.vm.network "private_network", ip: "192.168.100.20" # Comment this line if using launcher script.
+  
+  # Run the install shell to setup the PCE
+  config.vm.provision "shell" do |s|
+   s.path = "../../common-shared/snc-install.sh"
+   s.privileged = true
+   s.args = "vagrant"
+  end
+
+end

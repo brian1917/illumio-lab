@@ -1,0 +1,28 @@
+---
+- name: Copy appmaker.exe
+  win_copy:
+    src: ../appmaker.exe
+    dest: C:\Users\Administrator\appmaker.exe
+  tags:
+    - deploy
+
+- name: Copy CSV
+  win_copy:
+    src: "/home/centos/{{ csv }}"
+    dest: C:\Users\Administrator\connections.csv
+  tags:
+    - deploy
+
+- name: Stop appmaker processes
+  win_shell: Invoke-Expression 'Get-Process appmaker -ErrorAction SilentlyContinue | Stop-Process -PassThru -Force'
+  tags:
+    - stop
+
+- name: Start appmaker
+  win_shell: .\appmaker.exe
+  args:
+    chdir: C:\Users\Administrator
+  async: 180
+  poll: 0
+  tags:
+    - deploy

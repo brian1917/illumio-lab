@@ -1,0 +1,1070 @@
+[
+    {
+        "illumio_security_templates": [
+            {
+                "name": "Starter Labels",
+                "version": 1,
+                "os_family": "Universal",
+                "dependencies": [],
+                "icon": "universal",
+                "compatible_pce_versions": [
+                    51,
+                    52
+                ],
+                "labels": [
+                    {
+                        "key": "role",
+                        "value": "DB"
+                    },
+                    {
+                        "key": "role",
+                        "value": "WEB"
+                    },
+                    {
+                        "key": "role",
+                        "value": "APP"
+                    },
+                    {
+                        "key": "role",
+                        "value": "SYSLOG"
+                    },
+                    {
+                        "key": "role",
+                        "value": "DC"
+                    },
+                    {
+                        "key": "app",
+                        "value": "ACTIVE-DIRECTORY"
+                    },
+                    {
+                        "key": "app",
+                        "value": "INFRA-MGMT"
+                    },
+                    {
+                        "key": "app",
+                        "value": "SECURITY-MGMT"
+                    }
+                ]
+            },
+            {
+                "name": "Starter IP Lists",
+                "version": 1,
+                "os_family": "Universal",
+                "dependencies": [],
+                "icon": "universal",
+                "compatible_pce_versions": [
+                    51,
+                    52
+                ],
+                "ip_lists": [
+                    {
+                        "name": "RFC 1918",
+                        "ip_ranges": [
+                            {
+                                "from_ip": "10.0.0.0/8"
+                            },
+                            {
+                                "from_ip": "172.16.0.0/12"
+                            },
+                            {
+                                "from_ip": "192.168.0.0/16"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Link Local",
+                        "ip_ranges": [
+                            {
+                                "from_ip": "169.254.0.0/16"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Multicast",
+                        "ip_ranges": [
+                            {
+                                "from_ip": "224.0.0.0",
+                                "to_ip": "239.255.255.255"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Internet",
+                        "ip_ranges": [
+                            {
+                                "from_ip": "0.0.0.0/0"
+                            },
+                            {
+                                "from_ip": "10.0.0.0/8",
+                                "exclusion": true
+                            },
+                            {
+                                "from_ip": "172.16.0.0/12",
+                                "exclusion": true
+                            },
+                            {
+                                "from_ip": "192.168.0.0/16",
+                                "exclusion": true
+                            },
+                            {
+                                "from_ip": "169.254.0.0/16",
+                                "exclusion": true
+                            },
+                            {
+                                "from_ip": "224.0.0.0",
+                                "to_ip": "239.255.255.255",
+                                "exclusion": true
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Common Services",
+                "version": 1,
+                "os_family": "Universal",
+                "dependencies": [],
+                "icon": "universal",
+                "compatible_pce_versions": [
+                    51,
+                    52
+                ],
+                "services": [
+                    {
+                        "key": "1",
+                        "name": "NFS",
+                        "description": "Network File System",
+                        "service_ports": [
+                            {
+                                "port": 2049,
+                                "proto": 17
+                            }
+                        ]
+                    },
+                    {
+                        "key": "2",
+                        "name": "POPv3S",
+                        "description": "Secure POPv3",
+                        "service_ports": [
+                            {
+                                "port": 995,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "3",
+                        "name": "POPv3",
+                        "description": "Post Office Protocol v3",
+                        "service_ports": [
+                            {
+                                "port": 110,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "4",
+                        "name": "DHCP Server",
+                        "description": "Dynamic Host Control Protocol/BOOTP Server",
+                        "service_ports": [
+                            {
+                                "port": 67,
+                                "proto": 17
+                            },
+                            {
+                                "port": 67,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "5",
+                        "name": "BIND RNDC",
+                        "description": "BIND Remote Network Domain Control",
+                        "service_ports": [
+                            {
+                                "port": 953,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "6",
+                        "name": "FTPS",
+                        "description": "Secure FTP Server Data",
+                        "service_ports": [
+                            {
+                                "port": 989,
+                                "to_port": 990,
+                                "proto": 17
+                            },
+                            {
+                                "port": 989,
+                                "to_port": 990,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "7",
+                        "name": "HTTPS",
+                        "description": "Secure HTTP",
+                        "service_ports": [
+                            {
+                                "port": 443,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "8",
+                        "name": "DNS",
+                        "description": "Domain Name System",
+                        "service_ports": [
+                            {
+                                "port": 53,
+                                "proto": 17
+                            },
+                            {
+                                "port": 53,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "9",
+                        "name": "HTTP",
+                        "description": "Hyper Text Transfer Protocol",
+                        "service_ports": [
+                            {
+                                "port": 80,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "10",
+                        "name": "IRCS",
+                        "description": "Secure Internet Relay Chat",
+                        "service_ports": [
+                            {
+                                "port": 994,
+                                "proto": 17
+                            },
+                            {
+                                "port": 994,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "12",
+                        "name": "BGP",
+                        "description": "Border Gateway Protocol",
+                        "service_ports": [
+                            {
+                                "port": 179,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "13",
+                        "name": "LDAP",
+                        "description": "Lightweight Directory Access Protocol",
+                        "service_ports": [
+                            {
+                                "port": 389,
+                                "proto": 6
+                            },
+                            {
+                                "port": 389,
+                                "proto": 17
+                            }
+                        ]
+                    },
+                    {
+                        "key": "14",
+                        "name": "DHCP Client",
+                        "description": "Dynamic Host Control Protocol/BOOTP Client",
+                        "service_ports": [
+                            {
+                                "port": 68,
+                                "proto": 17
+                            },
+                            {
+                                "port": 68,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "15",
+                        "name": "IMAPS",
+                        "description": "Secure IMAP",
+                        "service_ports": [
+                            {
+                                "port": 993,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "16",
+                        "name": "Klogin",
+                        "description": "Kerberos Login",
+                        "service_ports": [
+                            {
+                                "port": 543,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "17",
+                        "name": "NAT-T",
+                        "description": "Network Address Translation - Traversal",
+                        "service_ports": [
+                            {
+                                "port": 4500,
+                                "proto": 17
+                            }
+                        ]
+                    },
+                    {
+                        "key": "18",
+                        "name": "NTP",
+                        "description": "Network Time Protocol",
+                        "service_ports": [
+                            {
+                                "port": 123,
+                                "proto": 6
+                            },
+                            {
+                                "port": 123,
+                                "proto": 17
+                            }
+                        ]
+                    },
+                    {
+                        "key": "19",
+                        "name": "FTP",
+                        "description": "File transfer protocol",
+                        "service_ports": [
+                            {
+                                "port": 20,
+                                "to_port": 21,
+                                "proto": 17
+                            },
+                            {
+                                "port": 20,
+                                "to_port": 21,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "20",
+                        "name": "RDP",
+                        "description": "Remote Desktop Protocol",
+                        "service_ports": [
+                            {
+                                "port": 3389,
+                                "proto": 17
+                            },
+                            {
+                                "port": 3389,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "21",
+                        "name": "Rlogin",
+                        "description": "Remote Login",
+                        "service_ports": [
+                            {
+                                "port": 513,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "22",
+                        "name": "Syslog",
+                        "description": "System Logging",
+                        "service_ports": [
+                            {
+                                "port": 514,
+                                "proto": 17
+                            },
+                            {
+                                "port": 514,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "23",
+                        "name": "RPC",
+                        "description": "Remote Procedure Call",
+                        "service_ports": [
+                            {
+                                "port": 530,
+                                "proto": 17
+                            },
+                            {
+                                "port": 530,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "24",
+                        "name": "Telnet",
+                        "description": "Telnet",
+                        "service_ports": [
+                            {
+                                "port": 23,
+                                "proto": 17
+                            },
+                            {
+                                "port": 23,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "25",
+                        "name": "PTP-General",
+                        "description": "Precision Time Protocol General",
+                        "service_ports": [
+                            {
+                                "port": 320,
+                                "proto": 17
+                            },
+                            {
+                                "port": 320,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "26",
+                        "name": "MSFT SMB",
+                        "description": "Server Message Block (SMB).",
+                        "service_ports": [
+                            {
+                                "port": 445,
+                                "proto": 6
+                            },
+                            {
+                                "port": 445,
+                                "proto": 17
+                            }
+                        ]
+                    },
+                    {
+                        "key": "27",
+                        "name": "IMAP",
+                        "description": "Internet Message Access Protocol",
+                        "service_ports": [
+                            {
+                                "port": 143,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "28",
+                        "name": "IRC",
+                        "description": "Internet Relay Chat",
+                        "service_ports": [
+                            {
+                                "port": 6667,
+                                "proto": 17
+                            },
+                            {
+                                "port": 6667,
+                                "proto": 6
+                            },
+                            {
+                                "port": 194,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "29",
+                        "name": "iSCSI",
+                        "description": "Internet Small Computer System Interface",
+                        "service_ports": [
+                            {
+                                "port": 3260,
+                                "proto": 6
+                            },
+                            {
+                                "port": 860,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "30",
+                        "name": "Kerberos-Auth",
+                        "description": "Kerberos Authentication Protocol",
+                        "service_ports": [
+                            {
+                                "port": 88,
+                                "proto": 17
+                            },
+                            {
+                                "port": 88,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "31",
+                        "name": "Kerberos-CDC",
+                        "description": "Kerberos Certificate Distribution Center",
+                        "service_ports": [
+                            {
+                                "port": 223,
+                                "proto": 17
+                            },
+                            {
+                                "port": 223,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "32",
+                        "name": "Kerberos-v4",
+                        "description": "Kerberos Version 4",
+                        "service_ports": [
+                            {
+                                "port": 750,
+                                "proto": 17
+                            },
+                            {
+                                "port": 750,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "33",
+                        "name": "Kerberos-v5",
+                        "description": "Kerberos Version 5",
+                        "service_ports": [
+                            {
+                                "port": 464,
+                                "proto": 17
+                            },
+                            {
+                                "port": 464,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "34",
+                        "name": "LDAPS",
+                        "description": "Secure LDAP",
+                        "service_ports": [
+                            {
+                                "port": 636,
+                                "proto": 17
+                            },
+                            {
+                                "port": 636,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "35",
+                        "name": "LPD-LPR",
+                        "description": "Line Printer Daemon-Line Printer Remote",
+                        "service_ports": [
+                            {
+                                "port": 515,
+                                "proto": 17
+                            },
+                            {
+                                "port": 515,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "36",
+                        "name": "PTP-Events",
+                        "description": "Precision Time Protocol Events",
+                        "service_ports": [
+                            {
+                                "port": 319,
+                                "proto": 17
+                            },
+                            {
+                                "port": 319,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "37",
+                        "name": "PXE",
+                        "description": "Preboot Execution Environment",
+                        "service_ports": [
+                            {
+                                "port": 4011,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "38",
+                        "name": "RIP",
+                        "description": "Routing Information Protocol",
+                        "service_ports": [
+                            {
+                                "port": 520,
+                                "proto": 17
+                            }
+                        ]
+                    },
+                    {
+                        "key": "39",
+                        "name": "RTSP",
+                        "description": "Real-Time Streaming Protocol",
+                        "service_ports": [
+                            {
+                                "port": 554,
+                                "proto": 17
+                            },
+                            {
+                                "port": 554,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "40",
+                        "name": "SFTP",
+                        "description": "Simple File Transfer Protocol",
+                        "service_ports": [
+                            {
+                                "port": 115,
+                                "proto": 6
+                            },
+                            {
+                                "port": 115,
+                                "proto": 17
+                            }
+                        ]
+                    },
+                    {
+                        "key": "41",
+                        "name": "SMTP",
+                        "description": "Simple Mail Transfer Protocol",
+                        "service_ports": [
+                            {
+                                "port": 25,
+                                "proto": 6
+                            },
+                            {
+                                "port": 25,
+                                "proto": 17
+                            }
+                        ]
+                    },
+                    {
+                        "key": "42",
+                        "name": "SNMP",
+                        "description": "Simple Network Management Protocol",
+                        "service_ports": [
+                            {
+                                "port": 161,
+                                "proto": 17,
+                                "to_port": 162
+                            },
+                            {
+                                "port": 161,
+                                "proto": 6,
+                                "to_port": 162
+                            }
+                        ]
+                    },
+                    {
+                        "key": "43",
+                        "name": "SNMP-Trap",
+                        "description": "Simple Network Management Protocol Trap",
+                        "service_ports": [
+                            {
+                                "port": 162,
+                                "proto": 17
+                            }
+                        ]
+                    },
+                    {
+                        "key": "44",
+                        "name": "SMTPS",
+                        "description": "Secure SMTP",
+                        "service_ports": [
+                            {
+                                "port": 465,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "45",
+                        "name": "SSH",
+                        "description": "Secure Shell",
+                        "service_ports": [
+                            {
+                                "port": 22,
+                                "proto": 17
+                            },
+                            {
+                                "port": 22,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "46",
+                        "name": "TFTP",
+                        "description": "Trivial File Transfer Protocol",
+                        "service_ports": [
+                            {
+                                "port": 69,
+                                "proto": 17
+                            },
+                            {
+                                "port": 69,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "48",
+                        "name": "Alt HTTP",
+                        "description": "Alternate HTTP",
+                        "service_ports": [
+                            {
+                                "port": 8080,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "49",
+                        "name": "MySQL",
+                        "description": " An open-source relational database management system (RDBMS)",
+                        "service_ports": [
+                            {
+                                "port": 3306,
+                                "proto": 6
+                            },
+                            {
+                                "port": 1186,
+                                "proto": 17
+                            },
+                            {
+                                "port": 1186,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "50",
+                        "name": "ISAKMP",
+                        "description": "Internet Security Association and Key Management Protocol",
+                        "service_ports": [
+                            {
+                                "port": 500,
+                                "proto": 17
+                            },
+                            {
+                                "port": 500,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "51",
+                        "name": "PostgreSQL",
+                        "description": "Open-source Object-Relational DBMS supporting almost all SQL constructs",
+                        "service_ports": [
+                            {
+                                "port": 5432,
+                                "proto": 17
+                            },
+                            {
+                                "port": 5432,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "52",
+                        "name": "MongoDB",
+                        "description": "Open-source cross-platform document-oriented database",
+                        "service_ports": [
+                            {
+                                "port": 27017,
+                                "proto": 6,
+                                "to_port": 27019
+                            },
+                            {
+                                "port": 28017,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "53",
+                        "name": "MSFT Remote Management",
+                        "description": "Windows Remote Management (WinRM) service implements the WS-Management protocol for remote management.",
+                        "service_ports": [
+                            {
+                                "port": 5985,
+                                "proto": 6,
+                                "to_port": 5986
+                            }
+                        ]
+                    },
+                    {
+                        "key": "54",
+                        "name": "MSFT Global Catalog",
+                        "description": "Microsoft Global Catalog",
+                        "service_ports": [
+                            {
+                                "port": 3268,
+                                "proto": 6,
+                                "to_port": 3269
+                            }
+                        ]
+                    },
+                    {
+                        "key": "55",
+                        "name": "MSFT Server Update Service",
+                        "description": "Windows Server Update Service for patching. Includes both default ports.",
+                        "service_ports": [
+                            {
+                                "port": 8531,
+                                "proto": 6
+                            },
+                            {
+                                "port": 8530,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "56",
+                        "name": "NetLogon/NTDS",
+                        "description": "This service covers both NetLogon and NTDS high port range.",
+                        "service_ports": [
+                            {
+                                "port": 49152,
+                                "proto": 6,
+                                "to_port": 65535
+                            }
+                        ]
+                    },
+                    {
+                        "key": "57",
+                        "name": "NetBIOS",
+                        "description": "NetBIOS protocol TCP, covers the Name, Datagram and Session Services.",
+                        "service_ports": [
+                            {
+                                "port": 137,
+                                "proto": 17,
+                                "to_port": 139
+                            },
+                            {
+                                "port": 137,
+                                "proto": 6,
+                                "to_port": 139
+                            }
+                        ]
+                    },
+                    {
+                        "key": "58",
+                        "name": "DNS Cache",
+                        "description": "DNS Cache.",
+                        "service_ports": [
+                            {
+                                "port": 5355,
+                                "proto": 17
+                            }
+                        ]
+                    },
+                    {
+                        "key": "59",
+                        "name": "MSFT Cluster Communication",
+                        "description": "Microsoft Fail-over Clustering - cluster communication",
+                        "service_ports": [
+                            {
+                                "port": 3343,
+                                "proto": 17
+                            }
+                        ]
+                    },
+                    {
+                        "key": "60",
+                        "name": "MSFT Net.TCP Port Sharing",
+                        "description": "Microsoft Net.TCP Port Sharing Service. This capability allows HTTP applications to coexist on the same physical machine in separate, isolated processes.",
+                        "service_ports": [
+                            {
+                                "port": 808,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "61",
+                        "name": "MSFT SQL Service Broker",
+                        "description": " There is no default port for SQL Server Service Broker, but this is the conventional configuration used in Microsoft's online examples.",
+                        "service_ports": [
+                            {
+                                "port": 4022,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "62",
+                        "name": "MSFT SQL Server/Client Communication",
+                        "description": "A set of ports that allows SQL communication between SQL hosts or client access. Use in conjunction with the MS FoC service to enable SQL fail-over cluster communication.",
+                        "service_ports": [
+                            {
+                                "port": 1434,
+                                "proto": 17
+                            },
+                            {
+                                "port": 1433,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "63",
+                        "name": "MSFT RPC",
+                        "description": "Resolves Remote Procedure Call (RPC) interfaces identifiers to transport endpoints.",
+                        "service_ports": [
+                            {
+                                "port": 135,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "64",
+                        "name": "MSFT RPC",
+                        "description": "Resolves Remote Procedure Call (RPC) interfaces identifiers to transport endpoints.",
+                        "service_ports": [
+                            {
+                                "port": 135,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "65",
+                        "name": "MSFT Domain Controllers",
+                        "description": "Ports used by Domain Controllers.",
+                        "service_ports": [
+                            {
+                                "port": 123,
+                                "proto": 17
+                            },
+                            {
+                                "port": 135,
+                                "proto": 6
+                            },
+                            {
+                                "port": 464,
+                                "proto": 6
+                            },
+                            {
+                                "port": 464,
+                                "proto": 17
+                            },
+                            {
+                                "port": 389,
+                                "proto": 6
+                            },
+                            {
+                                "port": 389,
+                                "proto": 17
+                            },
+                            {
+                                "port": 636,
+                                "proto": 6
+                            },
+                            {
+                                "port": 3267,
+                                "proto": 6
+                            },
+                            {
+                                "port": 3269,
+                                "proto": 6
+                            },
+                            {
+                                "port": 53,
+                                "proto": 6
+                            },
+                            {
+                                "port": 53,
+                                "proto": 17
+                            },
+                            {
+                                "port": 88,
+                                "proto": 6
+                            },
+                            {
+                                "port": 88,
+                                "proto": 17
+                            },
+                            {
+                                "port": 445,
+                                "proto": 6
+                            },
+                            {
+                                "port": 49152,
+                                "to_port": 65535,
+                                "proto": 6
+                            }
+                        ]
+                    },
+                    {
+                        "key": "66",
+                        "name": "Splunk",
+                        "description": "Splunk SIEM.",
+                        "service_ports": [
+                            {
+                                "port": 8000,
+                                "proto": 6
+                            },
+                            {
+                                "port": 8089,
+                                "proto": 6
+                            },
+                            {
+                                "port": 9997,
+                                "proto": 6
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

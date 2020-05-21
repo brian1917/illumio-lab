@@ -1,0 +1,97 @@
+{
+    "variables_file": "variable-files/personal-lab.json",
+    "aws_region": "us-east-2",
+    "email_tag": "name@domain.com",
+    "aws_vpc_name": "xyz-lab",
+    "vpc_cidr_block": "192.168.128.0/24",
+    "private_sshkey": "~/.ssh/id_rsa",
+    "public_sshkey": "~/.ssh/id_rsa.pub",
+    "windows_admin_pwd": "THIS-IS-A-PLACEHOLDER-PWD",
+    "admin_cidr_list": [
+        "1.2.3.4/5",
+        "6.7.8.9/10"
+    ],
+    "amis": {
+        "windows2019": {
+            "ami": "Windows_Server-2019-English-Full-Base-*",
+            "owner": "amazon",
+            "user": "Administrator"
+        },
+        "windows2016": {
+            "ami": "Windows_Server-2016-English-Full-Base-*",
+            "owner": "amazon",
+            "user": "Administrator"
+        },
+        "windows2012R2": {
+            "ami": "Windows_Server-2012-R2_RTM-English-64Bit-Base-*",
+            "owner": "amazon",
+            "user": "Administrator"
+        },
+        "windows2008R2": {
+            "ami": "W08-*",
+            "owner": "679593333241",
+            "user": "Administrator"
+        },
+        "centos7": {
+            "ami": "CentOS Linux 7 x86_64 HVM EBS*",
+            "owner": "679593333241",
+            "user": "centos"
+        },
+        "centos8": {
+            "ami": "SupportedImages CentOS Linux 8 x86_64*",
+            "owner": "679593333241",
+            "user": "centos"
+        },
+        "ubuntu16.04": {
+            "ami": "ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64*",
+            "owner": "099720109477",
+            "user": "ubuntu"
+        }
+    },
+    "subnets": {
+        "subnet-1": "192.168.128.0/24"
+    },
+    "linux_wklds": {
+        "test01": {
+            "subnet": "subnet-1",
+            "ami": "centos7",
+            "type": "t3.micro",
+            "volume_size_gb": 8
+        },
+        "test02": {
+            "subnet": "subnet-1",
+            "ami": "centos7",
+            "type": "t3.micro",
+            "volume_size_gb": 8
+        }
+    },
+    "windows_wklds": {},
+    "ansible_server": {
+        "build": "true",
+        "name": "ansible-server",
+        "subnet": "subnet-1",
+        "ami": "centos7",
+        "type": "t3.micro",
+        "volume_size_gb": 8
+    },
+    "pce": {
+        "cluster_type": "snc",
+        "ami": "centos7",
+        "volume_size_gb": 8,
+        "subnet": "subnet-1",
+        "type": "m4.large",
+        "rpm": "path/to/file.rpm",
+        "ui_rpm": "path/to/file.rpm",
+        "ven_bundle": "path/to/file.bz2",
+        "cert": "/path/to/file.crt",
+        "key": "/path/to/file.key",
+        "org_name": "my-lab",
+        "domain_name": "poc.segmentationpov.com",
+        "user_email": "name@domain.com",
+        "user_pwd": "THIS-IS-A-PLACEHOLDER-PWD",
+        "user_full_name": "First Last",
+        "front_end_https_port": 8443,
+        "front_end_event_service_port": 8444,
+        "service_discovery_encryption_key": "16 bytes that are base64 encoded (e.g., 05TlqH1W0cKcK797DV73yg=="
+    }
+}
