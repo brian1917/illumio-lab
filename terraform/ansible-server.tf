@@ -4,7 +4,7 @@
 resource "null_resource" "hosts-file-generator" {
   count = var.ansible_server["build"] == "true" ? 1 : 0
   provisioner "local-exec" {
-    command = "../ansible/build-ansible-hosts.sh"
+    command = "../ansible/build-ansible-hosts.sh ${var.variables_file}"
   }
 }
 
@@ -147,7 +147,7 @@ resource "null_resource" "trigger_pce-build_playbook" {
 
   provisioner "remote-exec" {
     inline = [
-      "ansible-playbook ansible/pce-build/site.yml -f 20 -e @ansible/variables.json"
+      "ansible-playbook ansible/pce-build/site.yml -f 20 -e @ansible/variables.json --skip-tags hardening"
     ]
   }
 }
