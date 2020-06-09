@@ -1,0 +1,48 @@
+# File types
+*.backup
+*.config
+*.csv
+*.log
+*.rpm
+*.deb
+*.tar.bz2
+*.msi
+*.tfstate
+*.key
+*.xlsx
+*DS_store*
+*VEN_ACTIVATION_CODE*
+
+# PCE and VEN files, except README in the directories
+*/pce-sw/*
+!*/pce-sw/README.md
+*/ven-sw/*
+!*/ven-sw/README.md
+
+# Vagrant
+*.vagrant/
+*config-do-not-edit
+
+# Terraform files
+.terraform/
+
+# Ignore Hardening Scripts - Download from KB
+*ilo-pipgen*
+*ilo-vpngen*
+
+# Other
+ansible/hosts
+terraform/variable-files/*
+!terraform/variable-files/sample.json
+common_shared/lxc/*.csv
+!common_shared/lxc/flows.csv
+!common_shared/lxc/workloads_20.csv
+*create-certs.sh*
+certs/generated-certs
+*VEN_ACTIVATION_CODE*
+
+*pce.yaml
+common-shared/splunk/*
+
+vagrant/mnc-pce/*
+
