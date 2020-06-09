@@ -6,7 +6,7 @@ data "template_file" "windows-set-user-template" {
   }
 }
 
-#Build Windows 2016 Server
+#Build Windows Workloads
 resource "aws_instance" "windows-wkld" {
   for_each                    = var.windows_wklds
   ami                         = data.aws_ami.amis[each.value["ami"]].id
