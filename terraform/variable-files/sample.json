@@ -52,27 +52,60 @@
         "subnet-1": "192.168.128.0/24"
     },
     "linux_wklds": {
-        "test01": {
+        "lw01": {
             "subnet": "subnet-1",
             "ami": "centos7",
             "type": "t3.micro",
-            "volume_size_gb": 8
+            "volume_size_gb": 8,
+            "role": "WEB",
+            "app": "ERP",
+            "env": "PROD",
+            "loc": "AWS"
         },
-        "test02": {
+        "lw02": {
             "subnet": "subnet-1",
             "ami": "centos7",
             "type": "t3.micro",
-            "volume_size_gb": 8
+            "volume_size_gb": 8,
+            "role": "DB",
+            "app": "ERP",
+            "env": "PROD",
+            "loc": "AWS"
         }
     },
-    "windows_wklds": {},
+    "windows_wklds": {
+        "ww01": {
+            "subnet": "subnet-1",
+            "win_server_type": "dc",
+            "ami": "windows2016",
+            "type": "t3.micro",
+            "volume_size_gb": 30,
+            "role": "DC",
+            "app": "ACTIVE-DIRECTORY",
+            "env": "PROD",
+            "loc": "BOS"
+        },
+        "ww02": {
+            "subnet": "subnet-1",
+            "win_server_type": "member",
+            "ami": "windows2012R2",
+            "type": "t3.micro",
+            "volume_size_gb": 30,
+            "role": "MEMBER",
+            "app": "ACTIVE-DIRECTORY",
+            "env": "PROD",
+            "loc": "AWS"
+        }
+    },
     "ansible_server": {
         "build": "true",
         "name": "ansible-server",
         "subnet": "subnet-1",
         "ami": "centos7",
         "type": "t3.micro",
-        "volume_size_gb": 8
+        "volume_size_gb": 8,
+        "env": "PROD",
+        "loc": "AWS"
     },
     "pce": {
         "cluster_type": "snc",
