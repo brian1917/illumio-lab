@@ -40,7 +40,7 @@ resource "aws_instance" "linux-wkld" {
 resource "aws_route53_record" "linux-wklds-public-dns" {
   for_each = var.linux_wklds
   zone_id  = data.aws_route53_zone.segmentationpov.zone_id
-  name     = "admin-${each.key}.${data.aws_route53_zone.segmentationpov.name}"
+  name     = "admin-${each.key}.poc"
   type     = "A"
   ttl      = "30"
   records  = [aws_instance.linux-wkld[each.key].public_ip]
@@ -50,22 +50,8 @@ resource "aws_route53_record" "linux-wklds-public-dns" {
 resource "aws_route53_record" "linux-wklds-private-dns" {
   for_each = var.linux_wklds
   zone_id  = data.aws_route53_zone.segmentationpov.zone_id
-  name     = "${each.key}.${data.aws_route53_zone.segmentationpov.name}"
+  name     = "${each.key}.poc"
   type     = "A"
   ttl      = "30"
   records  = [aws_instance.linux-wkld[each.key].private_ip]
-}
-
-output "linux-workloads-private-dns" {
-  value = {
-    for record in aws_route53_record.linux-wklds-private-dns :
-    record.name => record.records
-  }
-}
-
-output "linux-workloads-public-dns" {
-  value = {
-    for record in aws_route53_record.linux-wklds-public-dns :
-    record.name => record.records
-  }
 }

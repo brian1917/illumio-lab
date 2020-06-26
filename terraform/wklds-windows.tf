@@ -35,7 +35,7 @@ resource "aws_instance" "windows-wkld" {
 resource "aws_route53_record" "windows-wklds-public-dns" {
   for_each = var.windows_wklds
   zone_id  = data.aws_route53_zone.segmentationpov.zone_id
-  name     = "admin-${each.key}.${data.aws_route53_zone.segmentationpov.name}"
+  name     = "admin-${each.key}.poc"
   type     = "A"
   ttl      = "30"
   records  = [aws_instance.windows-wkld[each.key].public_ip]
@@ -45,23 +45,11 @@ resource "aws_route53_record" "windows-wklds-public-dns" {
 resource "aws_route53_record" "windows-wklds-private-dns" {
   for_each = var.windows_wklds
   zone_id  = data.aws_route53_zone.segmentationpov.zone_id
-  name     = "${each.key}.${data.aws_route53_zone.segmentationpov.name}"
+  name     = "${each.key}.poc"
   type     = "A"
   ttl      = "30"
   records  = [aws_instance.windows-wkld[each.key].private_ip]
 }
 
-output "windows-workloads-private-dns" {
-  value = {
-    for record in aws_route53_record.windows-wklds-private-dns :
-    record.name => record.records
-  }
-}
 
-output "windows-workloads-public-dns" {
-  value = {
-    for record in aws_route53_record.windows-wklds-public-dns :
-    record.name => record.records
-  }
-}
 
