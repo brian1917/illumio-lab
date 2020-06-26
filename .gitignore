@@ -12,6 +12,7 @@
 *.xlsx
 *DS_store*
 *VEN_ACTIVATION_CODE*
+*PCE-AD_Sync*
 
 # PCE and VEN files, except README in the directories
 */pce-sw/*
@@ -28,7 +29,9 @@
 
 # Ignore Hardening Scripts - Download from KB
 *ilo-pipgen*
+!ilo-pipgen.yaml
 *ilo-vpngen*
+!ilo-vpngen.yaml
 
 # Other
 ansible/hosts

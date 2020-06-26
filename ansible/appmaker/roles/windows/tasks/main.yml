@@ -1,14 +1,14 @@
 ---
 - name: Copy appmaker.exe
   win_copy:
-    src: ../appmaker.exe
+    src: ../files/appmaker.exe
     dest: C:\Users\Administrator\appmaker.exe
   tags:
     - deploy
 
 - name: Copy CSV
   win_copy:
-    src: "/home/centos/{{ csv }}"
+    src: "../files/{{ csv }}"
     dest: C:\Users\Administrator\connections.csv
   tags:
     - deploy

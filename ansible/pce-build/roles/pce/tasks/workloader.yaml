@@ -1,0 +1,42 @@
+- name: Download latest workloader locally
+  shell:
+    cmd: curl https://api.github.com/repos/brian1917/workloader/releases/latest | grep "browser_download_url.*linux.*.zip" | cut -d ':' -f 2,3 | tr -d \" | wget -O /home/centos/workloader-linux.zip -qi -
+  args:
+    warn: no
+  when: node_type in ['core0', 'snc0']
+
+- name: "Unzip downloaded workloader package"
+  unarchive:
+    src: /home/centos/workloader-linux.zip
+    dest: /home/centos
+  when: node_type in ['core0', 'snc0']
+
+- name: Download segmentation template
+  get_url:
+    url: https://raw.githubusercontent.com/brian1917/illumio-pce-starter-template/master/Illumio-PCE-Setup-Template.json
+    dest: /home/centos/Illumio-PCE-Setup-Template.json
+
+- name: Login to workloader
+  shell:
+    cmd: PCE_NAME=default PCE_FQDN={{ pce.org_name }}.{{ pce.domain_name }} PCE_PORT={{ pce.front_end_https_port }} PCE_USER={{ pce.user_email }} PCE_PWD={{ pce.user_pwd }} PCE_DISABLE_TLS=false ./workloader pce-add
+  args:
+    chdir: /home/centos
+    creates: pce.yaml
+
+- name: Delete unused labels
+  shell:
+    cmd: ./workloader labels-delete-unused
+  args:
+    chdir: /home/centos
+
+- name: Import Segmentation Template
+  shell:
+    cmd: ./workloader template-import Illumio-PCE-Setup-Template.json
+  args:
+    chdir: /home/centos
+
+- name: Get default pairing key
+  shell:
+    cmd: ./workloader get-pk -f /home/centos/ansible/ven-install/pk
+  args:
+    chdir: /home/centos

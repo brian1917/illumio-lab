@@ -36,7 +36,7 @@ resource "aws_instance" "ansible" {
 resource "aws_route53_record" "ansible-public-dns" {
   count   = var.ansible_server["build"] == "true" ? 1 : 0
   zone_id = data.aws_route53_zone.segmentationpov.zone_id
-  name    = "admin-${var.ansible_server["name"]}.${data.aws_route53_zone.segmentationpov.name}"
+  name    = "admin-${var.ansible_server["name"]}.poc"
   type    = "A"
   ttl     = "30"
   records = [aws_instance.ansible[0].public_ip]
@@ -46,14 +46,17 @@ resource "aws_route53_record" "ansible-public-dns" {
 resource "aws_route53_record" "ansible-private-dns" {
   count   = var.ansible_server["build"] == "true" ? 1 : 0
   zone_id = data.aws_route53_zone.segmentationpov.zone_id
-  name    = "${var.ansible_server["name"]}.${data.aws_route53_zone.segmentationpov.name}"
+  name    = "${var.ansible_server["name"]}.poc"
   type    = "A"
   ttl     = "30"
   records = [aws_instance.ansible[0].private_ip]
 }
 
 // Provision the ansible server as a null resource so we can get Ansible DNS set up first (not required, but nice for when ansible fails and exits terraform)
-resource "null_resource" "trigger_pce-build_playbook" {
+resource "null_resource" "provision_ansible_server" {
+  triggers = {
+      ansible_server_id = aws_instance.ansible[0].id // Only run this when the ansible server is rebuilt.
+  }
   count      = var.ansible_server["build"] == "true" ? 1 : 0
   depends_on = [aws_route53_record.ansible-private-dns, aws_route53_record.ansible-public-dns]
   connection {
@@ -84,21 +87,22 @@ resource "null_resource" "trigger_pce-build_playbook" {
     destination = "/home/centos/.ssh/id_rsa"
   }
 
-  # Set hostname, add SSH key with right permissions and change ownership of ansible hosts file
-  provisioner "remote-exec" {
-    inline = [
-      "sudo hostnamectl set-hostname ${var.ansible_server["name"]}",
-      "echo 'IdentityFile ~/.ssh/id_rsa' >> /home/centos/.ssh/config",
-      "chmod 600 ~/.ssh/config",
-      "chmod 600 ~/.ssh/id_rsa",
-      "sudo chown centos /etc/ansible/hosts"
-    ]
-  }
-
-  # Copy the ansible folder
+# Copy the ansible folder
   provisioner "file" {
     source      = "../ansible"
     destination = "/home/centos"
+  }
+
+  # Set hostname, add SSH key with right permissions and change ownership of ansible hosts file
+  provisioner "remote-exec" {
+    inline = [
+      "sudo hostnamectl set-hostname ${var.ansible_server["name"]}", # Set hostname
+      "echo 'IdentityFile ~/.ssh/id_rsa' >> /home/centos/.ssh/config", # Add identity file to ssh config
+      "chmod 600 ~/.ssh/config ~/.ssh/id_rsa", # Update permissions of config file and private SSH Key.
+      "sudo mv /home/centos/ansible/hosts /etc/ansible/hosts", # Move the Hosts file from the Ansible folder to default location
+      "pip install dnspython", # This is to do reverse DNS lookup in Ansible. We should work it into Ansible AMI soon.
+      "sudo yum install -y wget unzip" # Download and unzip workloader. We should work it into the Ansible AMI soon.
+    ]
   }
 
   # Copy the variables JSON file
@@ -107,47 +111,12 @@ resource "null_resource" "trigger_pce-build_playbook" {
     destination = "/home/centos/ansible/variables.json"
   }
 
-  # Copy the hosts file to the ansible server
-  provisioner "file" {
-    source      = "../ansible/hosts"
-    destination = "/etc/ansible/hosts"
-  }
-
-  # Copy the VEN bundle
-  provisioner "file" {
-    source      = var.pce["ven_bundle"]
-    destination = "/home/centos/ansible/pce-build/roles/pce/files/${basename(var.pce["ven_bundle"])}"
-  }
-
-  # Copy the PCE RPM
-  provisioner "file" {
-    source      = var.pce["rpm"]
-    destination = "/home/centos/ansible/pce-build/roles/pce/files/${basename(var.pce["rpm"])}"
-  }
-
-  # Copy the PCE RPM
-  provisioner "file" {
-    source      = var.pce["ui_rpm"]
-    destination = "/home/centos/ansible/pce-build/roles/pce/files/${basename(var.pce["ui_rpm"])}"
-  }
-
-  # Copy the cert
-  provisioner "file" {
-    source      = var.pce["cert"]
-    destination = "/home/centos/ansible/pce-build/roles/pce/files/${basename(var.pce["cert"])}"
-  }
-
-  # Copy the key
-  provisioner "file" {
-    source      = var.pce["key"]
-    destination = "/home/centos/ansible/pce-build/roles/pce/files/${basename(var.pce["key"])}"
-  }
-
   # Build the PCE
-
   provisioner "remote-exec" {
     inline = [
-      "ansible-playbook ansible/pce-build/site.yml -f 20 -e @ansible/variables.json --skip-tags hardening"
+      "ansible-playbook ansible/pce-build/site.yml -e @ansible/variables.json --skip-tags hardening",
+      "ansible-playbook ansible/wkld-setup/site.yml -e @ansible/variables.json --skip-tags hardening",
+      "ansible-playbook ansible/ven-install/site.yml -e @ansible/variables.json --skip-tags hardening"
     ]
   }
 }

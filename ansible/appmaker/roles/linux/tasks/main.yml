@@ -33,7 +33,7 @@
 
 - name: Copy appmaker
   copy:
-    src: ../appmaker
+    src: ../files/appmaker
     dest: "/home/centos/appmaker"
     mode: a+x
   tags:
@@ -41,7 +41,7 @@
 
 - name: Copy CSV
   copy:
-    src: "/home/centos/{{ csv }}"
+    src: "../files/{{ csv }}"
     dest: "/home/centos/connections.csv"
   tags:
     - deploy

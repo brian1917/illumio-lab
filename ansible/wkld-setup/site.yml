@@ -3,7 +3,28 @@
   become: true
   roles:
     - role: linux
+  tags:
+    - linux-base
 
 - hosts: win
+  gather_facts: True
   roles:
     - role: windows
+  tags:
+    - windows-base
+
+- hosts: dc
+  gather_facts: True
+  roles:
+    - role: windows
+    - role: dc
+  tags:
+    - dc
+
+- hosts: member
+  gather_facts: True
+  roles:
+    - role: windows
+    - role: member
+  tags:
+    - member
