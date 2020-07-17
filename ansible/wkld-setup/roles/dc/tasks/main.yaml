@@ -32,7 +32,7 @@
     gather_subset: "all"
   delegate_to: "{{ item }}"
   delegate_facts: True
-  loop: "{{ query('inventory_hostnames', 'all:!dc:!member') }}"
+  loop: "{{ query('inventory_hostnames', 'all:!dc:!member:!ansible') }}"
 
 - name: Add DNS Records of other workloads
   win_dns_record:
@@ -41,12 +41,12 @@
     type: A
     zone: "poc.segmentationpov.com"
     state: present
-  loop: "{{ query('inventory_hostnames', 'all:!dc:!member') }}"
+  loop: "{{ query('inventory_hostnames', 'all:!dc:!member:!ansible') }}"
 
 - name: Add DNS Records for PCE Public IP
   win_dns_record:
-    name: "pitta-lab"
-    value: "{{ lookup('dig', 'pitta-lab.poc.segmentationpov.com.')}}"
+    name: "{{ pce.org_name }}"
+    value: "{{ lookup('dig', '{{ pce.org_name }}.{{ pce.domain_name }}')}}"
     type: A
     zone: "poc.segmentationpov.com"
     state: present
@@ -96,9 +96,10 @@
     - users
 
 - name: Update RDP groups
-  win_shell: net localgroup "Remote Desktop Users" "Domain Users" /add
+  win_shell: net localgroup "Remote Desktop Users" "Domain Users" /add >> C:\RDP.txt
   args:
     executable: cmd.exe
+    creates: C:\RDP.txt
 
 - name: Copy AD Sync Script
   win_copy:
