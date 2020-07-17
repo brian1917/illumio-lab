@@ -1,15 +1,17 @@
 {
-    "variables_file": "variable-files/personal-lab.json",
+    "variables_file": "variable-files/sample.json",
     "aws_region": "us-east-2",
-    "email_tag": "name@domain.com",
-    "aws_vpc_name": "xyz-lab",
+    "email_tag": "ron.swanson@domain.com",
+    "aws_vpc_name": "bep-lab",
     "vpc_cidr_block": "192.168.128.0/24",
     "private_sshkey": "~/.ssh/id_rsa",
     "public_sshkey": "~/.ssh/id_rsa.pub",
-    "windows_admin_pwd": "THIS-IS-A-PLACEHOLDER-PWD",
+    "windows_admin_pwd": "FakePassword",
     "admin_cidr_list": [
-        "1.2.3.4/5",
-        "6.7.8.9/10"
+        "1.1.1.1/31",
+        "2.2.2.2/28",
+        "3.3.3.3/32",
+        "4.4.4.4/32"
     ],
     "amis": {
         "windows2019": {
@@ -78,7 +80,7 @@
             "subnet": "subnet-1",
             "win_server_type": "dc",
             "ami": "windows2016",
-            "type": "t3.micro",
+            "type": "t3.medium",
             "volume_size_gb": 30,
             "role": "DC",
             "app": "ACTIVE-DIRECTORY",
@@ -89,7 +91,7 @@
             "subnet": "subnet-1",
             "win_server_type": "member",
             "ami": "windows2012R2",
-            "type": "t3.micro",
+            "type": "t3.medium",
             "volume_size_gb": 30,
             "role": "MEMBER",
             "app": "ACTIVE-DIRECTORY",
@@ -99,7 +101,7 @@
     },
     "ansible_server": {
         "build": "true",
-        "name": "ansible-server",
+        "name": "swanson-ansible",
         "subnet": "subnet-1",
         "ami": "centos7",
         "type": "t3.micro",
@@ -110,21 +112,22 @@
     "pce": {
         "cluster_type": "snc",
         "ami": "centos7",
-        "volume_size_gb": 8,
+        "volume_size_gb": 30,
         "subnet": "subnet-1",
         "type": "m4.large",
-        "rpm": "path/to/file.rpm",
-        "ui_rpm": "path/to/file.rpm",
-        "ven_bundle": "path/to/file.bz2",
-        "cert": "/path/to/file.crt",
-        "key": "/path/to/file.key",
-        "org_name": "my-lab",
+        "rpm": "illumio-pce-19.3.2-17064.x86_64.rpm",
+        "ui_rpm": "illumio-pce-ui-19.3.2.UI1-17049.x86_64.rpm",
+        "ven_version": "19.3.2-6271",
+        "ven_bundle": "illumio-ven-bundle-19.3.2-6271.tar.bz2",
+        "cert": "star_poc_segmentationpov_com_bundle.crt",
+        "key": "star_poc_segmentationpov_com.key",
+        "org_name": "swanson-lab",
         "domain_name": "poc.segmentationpov.com",
-        "user_email": "name@domain.com",
-        "user_pwd": "THIS-IS-A-PLACEHOLDER-PWD",
-        "user_full_name": "First Last",
+        "user_email": "ron.swanson@domain.com",
+        "user_pwd": "FakePassword",
+        "user_full_name": "Ron swanson",
         "front_end_https_port": 8443,
         "front_end_event_service_port": 8444,
-        "service_discovery_encryption_key": "16 bytes that are base64 encoded (e.g., 05TlqH1W0cKcK797DV73yg=="
+        "service_discovery_encryption_key": "NOTREALNOTREALNOTREALNOT"
     }
 }
