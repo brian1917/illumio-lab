@@ -1,14 +1,14 @@
-- name: "Copy VEN script to the workload"
-  win_template:
-    src: ./pairing.ps1.j2
-    dest: C:\pairing.ps1
-  tags:
-    - venscript
+# Copy, install, and activate VEN on all Windows boxes
+- name: Copy the VEN MSI to the remote hosts
+  win_copy:
+    src: illumio-ven-{{ pce.ven_version }}.win.x64.msi
+    dest: C:\Users\Administrator\illumio-ven-{{ pce.ven_version }}.win.x64.msi
 
-- name: Pair VENs
-  win_shell: C:\pairing.ps1
+- name: Install the VEN MSI
+  win_package:
+    path: C:\Users\Administrator\illumio-ven-{{ pce.ven_version }}.win.x64.msi
+
+- name: Activate the VEN
+  win_shell: .\illumio-ven-ctl.ps1 activate -management-server {{ pce.org_name }}.{{ pce.domain_name }}:{{ pce.front_end_https_port }} -activation-code "{{ pairing_key }}"
   args:
-    chdir: C:\
-    creates: C:\Program Files\Illumio\illumio-ven-ctl.ps1
-  tags:
-    - venscript
+    chdir: C:\Program Files\Illumio

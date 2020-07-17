@@ -1,16 +1,17 @@
-- name: "Copy VEN script to the workload"
-  template:
-    src: ./pairing.sh.j2
-    dest: /tmp/pairing.sh
-    mode: "774"
-  tags:
-    - venscript
+# Move Linux VEN to hosts
+- name: Linux - copy the VEN RPM to the remote hosts
+  copy:
+    src: illumio-ven-{{ pce.ven_version }}.c{{ ansible_distribution_major_version }}.x86_64.rpm
+    dest: /tmp/illumio-ven-{{ pce.ven_version }}.c{{ ansible_distribution_major_version }}.x86_64.rpm
 
-- name: "Run pairing script"
-  shell: ./pairing.sh
-  args:
-    chdir: /tmp/
-    creates: /opt/illumio_ven/illumio-ven-ctl
+- name: Linux - install the VEN RPM
   become: true
-  tags:
-    - venscript
+  become_user: root
+  yum:
+    name: /tmp/illumio-ven-{{ pce.ven_version }}.c{{ ansible_distribution_major_version }}.x86_64.rpm
+
+- name: Linux - activate the VEN
+  become: true
+  become_user: root
+  shell:
+    cmd: /opt/illumio_ven/illumio-ven-ctl activate --management-server {{ pce.org_name }}.{{ pce.domain_name }}:{{ pce.front_end_https_port }} --activation-code "{{ pairing_key }}"
