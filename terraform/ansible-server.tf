@@ -11,7 +11,7 @@ resource "null_resource" "hosts-file-generator" {
 # Build the EC2 instance
 resource "aws_instance" "ansible" {
   count                       = var.ansible_server["build"] == "true" ? 1 : 0
-  depends_on                  = [null_resource.hosts-file-generator]
+  depends_on                  = [null_resource.hosts-file-generator, aws_instance.pce, aws_instance.linux-wkld, aws_instance.windows-wkld]
   ami                         = "ami-08e4d22f3042bfe58"
   instance_type               = var.ansible_server["type"]
   vpc_security_group_ids      = [aws_security_group.lab-rules.id]
@@ -29,36 +29,8 @@ resource "aws_instance" "ansible" {
     Name  = "${var.aws_vpc_name}-${var.ansible_server["name"]}"
     Email = var.email_tag
   }
-}
 
-# Build the ansible DNS entries
-// Use the public IP for access to workload remotely
-resource "aws_route53_record" "ansible-public-dns" {
-  count   = var.ansible_server["build"] == "true" ? 1 : 0
-  zone_id = data.aws_route53_zone.segmentationpov.zone_id
-  name    = "admin-${var.ansible_server["name"]}.poc"
-  type    = "A"
-  ttl     = "30"
-  records = [aws_instance.ansible[0].public_ip]
-}
-
-// Use private IP for internal communication
-resource "aws_route53_record" "ansible-private-dns" {
-  count   = var.ansible_server["build"] == "true" ? 1 : 0
-  zone_id = data.aws_route53_zone.segmentationpov.zone_id
-  name    = "${var.ansible_server["name"]}.poc"
-  type    = "A"
-  ttl     = "30"
-  records = [aws_instance.ansible[0].private_ip]
-}
-
-// Provision the ansible server as a null resource so we can get Ansible DNS set up first (not required, but nice for when ansible fails and exits terraform)
-resource "null_resource" "provision_ansible_server" {
-  triggers = {
-      ansible_server_id = aws_instance.ansible[0].id // Only run this when the ansible server is rebuilt.
-  }
-  count      = var.ansible_server["build"] == "true" ? 1 : 0
-  depends_on = [aws_route53_record.ansible-private-dns, aws_route53_record.ansible-public-dns]
+  // Connect using the Public IP address
   connection {
     host        = aws_instance.ansible[0].public_ip
     type        = "ssh"
@@ -67,9 +39,11 @@ resource "null_resource" "provision_ansible_server" {
     private_key = file(var.private_sshkey)
   }
 
-  # Uncomment this section if you need to provision the ansible server
-  # You'd do this if you're using a plain CentOS AMI instead of the AMI configured with Ansible already. 
-  # The AMI with ansible saves a lot of build time.
+  /**
+  Uncomment this section if you need to provision the ansible server
+  You'd do this if you're using a plain CentOS AMI instead of the AMI configured with Ansible already. 
+  The AMI with ansible saves a lot of build time.
+  **/
   /**
   provisioner "remote-exec" {
     inline = [
@@ -93,7 +67,7 @@ resource "null_resource" "provision_ansible_server" {
     destination = "/home/centos"
   }
 
-  # Set hostname, add SSH key with right permissions and change ownership of ansible hosts file
+  # Run some commands to prep the ansible server
   provisioner "remote-exec" {
     inline = [
       "sudo hostnamectl set-hostname ${var.ansible_server["name"]}", # Set hostname
@@ -103,6 +77,7 @@ resource "null_resource" "provision_ansible_server" {
       "pip install dnspython", # This is to do reverse DNS lookup in Ansible. We should work it into Ansible AMI soon.
       "sudo yum install -y wget unzip" # Download and unzip workloader. We should work it into the Ansible AMI soon.
     ]
+    on_failure = continue
   }
 
   # Copy the variables JSON file
@@ -115,8 +90,31 @@ resource "null_resource" "provision_ansible_server" {
   provisioner "remote-exec" {
     inline = [
       "ansible-playbook ansible/pce-build/site.yml -e @ansible/variables.json --skip-tags hardening",
-      "ansible-playbook ansible/wkld-setup/site.yml -e @ansible/variables.json --skip-tags hardening",
-      "ansible-playbook ansible/ven-install/site.yml -e @ansible/variables.json --skip-tags hardening"
+      "ansible-playbook ansible/wkld-setup/site.yml -e @ansible/variables.json"
+      # "ansible-playbook ansible/ven-repo-install/site.yml -e @ansible/variables.json --skip-tags hardening"
     ]
+    on_failure = continue
   }
+
+}
+
+# Build the ansible DNS entries
+// Use the public IP for access to workload remotely
+resource "aws_route53_record" "ansible-public-dns" {
+  count   = var.ansible_server["build"] == "true" ? 1 : 0
+  zone_id = data.aws_route53_zone.segmentationpov.zone_id
+  name    = "admin-${var.ansible_server["name"]}.poc"
+  type    = "A"
+  ttl     = "30"
+  records = [aws_instance.ansible[0].public_ip]
+}
+
+// Use private IP for internal communication
+resource "aws_route53_record" "ansible-private-dns" {
+  count   = var.ansible_server["build"] == "true" ? 1 : 0
+  zone_id = data.aws_route53_zone.segmentationpov.zone_id
+  name    = "${var.ansible_server["name"]}.poc"
+  type    = "A"
+  ttl     = "30"
+  records = [aws_instance.ansible[0].private_ip]
 }
