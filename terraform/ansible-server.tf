@@ -90,8 +90,8 @@ resource "aws_instance" "ansible" {
   provisioner "remote-exec" {
     inline = [
       "ansible-playbook ansible/pce-build/site.yml -e @ansible/variables.json --skip-tags hardening",
-      "ansible-playbook ansible/wkld-setup/site.yml -e @ansible/variables.json"
-      # "ansible-playbook ansible/ven-repo-install/site.yml -e @ansible/variables.json --skip-tags hardening"
+      "ansible-playbook ansible/wkld-setup/site.yml -e @ansible/variables.json",
+      "ansible-playbook ansible/ven-repo-install/site.yml -e @ansible/variables.json --skip-tags hardening"
     ]
     on_failure = continue
   }
