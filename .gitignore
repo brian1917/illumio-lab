@@ -43,6 +43,7 @@ common_shared/lxc/*.csv
 *create-certs.sh*
 certs/generated-certs
 *VEN_ACTIVATION_CODE*
+generate-cert/output/*
 
 *pce.yaml
 common-shared/splunk/*
