@@ -1,0 +1,8 @@
+- hosts: linux,ansible
+  become: true
+  roles:
+    - role: linux
+
+- hosts: win,member,dc
+  roles:
+    - role: windows
