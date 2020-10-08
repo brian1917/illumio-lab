@@ -29,6 +29,31 @@ resource "aws_instance" "ansible" {
     Name  = "${var.aws_vpc_name}-${var.ansible_server["name"]}"
     Email = var.email_tag
   }
+}
+
+# Build the ansible DNS entries
+// Use the public IP for access to workload remotely
+resource "aws_route53_record" "ansible-public-dns" {
+  count   = var.ansible_server["build"] == "true" ? 1 : 0
+  zone_id = data.aws_route53_zone.segmentationpov.zone_id
+  name    = "admin-${var.ansible_server["name"]}.poc"
+  type    = "A"
+  ttl     = "30"
+  records = [aws_instance.ansible[0].public_ip]
+}
+
+// Use private IP for internal communication
+resource "aws_route53_record" "ansible-private-dns" {
+  count   = var.ansible_server["build"] == "true" ? 1 : 0
+  zone_id = data.aws_route53_zone.segmentationpov.zone_id
+  name    = "${var.ansible_server["name"]}.poc"
+  type    = "A"
+  ttl     = "30"
+  records = [aws_instance.ansible[0].private_ip]
+}
+
+resource "null_resource" "run_ansible_play_books" {
+  depends_on = [aws_route53_record.ansible-public-dns, aws_route53_record.ansible-private-dns]
 
   // Connect using the Public IP address
   connection {
@@ -91,30 +116,11 @@ resource "aws_instance" "ansible" {
     inline = [
       "ansible-playbook ansible/pce-build/site.yml -e @ansible/variables.json --skip-tags hardening",
       "ansible-playbook ansible/wkld-setup/site.yml -e @ansible/variables.json",
-      "ansible-playbook ansible/ven-repo-install/site.yml -e @ansible/variables.json --skip-tags hardening"
+      "ansible-playbook ansible/ven-repo-install/site.yml -e @ansible/variables.json --skip-tags hardening",
+      "ansible-playbook ansible/kubernetesl/site.yml -e @ansible/variables.json"
     ]
     on_failure = continue
   }
 
 }
 
-# Build the ansible DNS entries
-// Use the public IP for access to workload remotely
-resource "aws_route53_record" "ansible-public-dns" {
-  count   = var.ansible_server["build"] == "true" ? 1 : 0
-  zone_id = data.aws_route53_zone.segmentationpov.zone_id
-  name    = "admin-${var.ansible_server["name"]}.poc"
-  type    = "A"
-  ttl     = "30"
-  records = [aws_instance.ansible[0].public_ip]
-}
-
-// Use private IP for internal communication
-resource "aws_route53_record" "ansible-private-dns" {
-  count   = var.ansible_server["build"] == "true" ? 1 : 0
-  zone_id = data.aws_route53_zone.segmentationpov.zone_id
-  name    = "${var.ansible_server["name"]}.poc"
-  type    = "A"
-  ttl     = "30"
-  records = [aws_instance.ansible[0].private_ip]
-}
