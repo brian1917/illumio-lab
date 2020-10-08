@@ -1,0 +1,121 @@
+---
+- name: Check if machine-id already replaced
+  stat:
+    path: /home/centos/generate_new_machine_id.txt
+  register: machine_id_already_replaced
+
+- name: Remove existing machine-id
+  file:
+    path: "{{ item }} "
+    state: absent
+  with_items:
+    - "/etc/machine-id"
+    - "/var/lib/dbus/machine-id"
+  when: machine_id_already_replaced.stat.exists == false
+
+- name: Generate new machine-id
+  shell: systemd-machine-id-setup >> generate_new_machine_id.txt
+  args:
+    chdir: /home/centos
+    creates: generate_new_machine_id.txt
+
+- name: Reboot the machine if updated machine-id
+  reboot:
+    pre_reboot_delay: 0 # This is to appease VScode error checking. The line is useless.
+  when: machine_id_already_replaced.stat.exists == false
+
+- name: Add the Kubernetes repository
+  yum_repository:
+    name: Kubernetes
+    description: Google Kubernetes
+    baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+    gpgcheck: true
+    repo_gpgcheck: true
+    gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+
+- name: Install kubelet, kubeadm, kubectl, and docker
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - kubelet
+      - kubeadm
+      - kubectl
+      - docker
+
+- name: Start and enable Docker
+  service:
+    name: docker
+    enabled: true
+    state: started
+
+- name: Set the hostname
+  hostname:
+    name: "{{ inventory_hostname }}"
+
+- name: Disable SELinux
+  selinux:
+    state: disabled
+
+- name: Disable swap
+  command: swapoff -a
+
+- name: Persist disabling swap
+  command: sed -i '/swap/d' /etc/fstab
+
+- name: Initialize the cluster on master
+  shell: kubeadm init --pod-network-cidr=10.244.0.0/16 >> cluster_initialized.txt
+  args:
+    chdir: /home/centos
+    creates: cluster_initialized.txt
+  when: node_type in ['master']
+
+- name: Create kube directory in master
+  file:
+    path: /home/centos/.kube
+    state: directory
+    mode: "0755"
+  when: node_type in ['master']
+
+- name: Copy config file in master
+  copy:
+    remote_src: true
+    src: /etc/kubernetes/admin.conf
+    dest: /home/centos/.kube/config
+    owner: centos
+    group: centos
+  when: node_type in ['master']
+
+- name: Install pod network on master
+  shell: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml >> pod_network_setup.txt
+  args:
+    chdir: /home/centos
+    creates: pod_network_setup.txt
+  when: node_type in ['master']
+
+- name: Get join command from master
+  shell: kubeadm token create --print-join-command
+  register: join_command_raw
+  when: node_type in ['master']
+
+- name: Set join command
+  set_fact:
+    key_value: "" # This is just to appease VSCode error checking. The line is useless.
+    join_command: "{{ join_command_raw.stdout_lines[0] }}"
+  when: node_type in ['master']
+
+- name: Join the cluster
+  shell: "{{ hostvars['master.poc.segmentationpov.com'].join_command }} >> node_joined.txt"
+  args:
+    chdir: /home/centos
+    creates: node_joined.txt
+  when: node_type in ['worker']
+
+- name: Move the Illumio files to the master
+  copy:
+    src: /home/centos/ansible/kubernetes/roles/node/files/{{ item }}
+    dest: /home/centos/
+    with_items:
+      - "{{ pce.kubelink }}"
+      - "{{ pce.cven }}"
+  when: node_type in ['master']

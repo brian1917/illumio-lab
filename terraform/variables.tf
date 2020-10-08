@@ -54,6 +54,10 @@ variable "windows_wklds" {
   type        = map
   description = "Key-value pairs for Windows workloads. See variables.json for examples."
 }
+variable "kubernetes" {
+  type        = map
+  description = "Key-value pairs for Kubernetes nodes. See variables.json for examples."
+}
 variable "ansible_server" {
   type        = map
   description = "Key-value pairs for the ansible server. See variables.json for examples."

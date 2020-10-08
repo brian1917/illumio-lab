@@ -11,6 +11,7 @@ windows_server_types=()
 linux_wklds=()
 dc=()
 member=()
+kubernetes=()
 
 # Populate the arrays
 for w in $(jq -r '.windows_wklds | keys[]' ${1}); do
@@ -27,6 +28,9 @@ for l in $(jq -r '.linux_wklds | keys[]' ${1}); do
 done
 for t in $(jq -r '.windows_wklds | .[] | .win_server_type' ${1}); do
     windows_server_types+=("$t")
+done
+for k in $(jq -r '.kubernetes | keys[]' ${1}); do
+    kubernetes+=("$k")
 done
 
 # Check if we are building an SNC and populate
@@ -53,7 +57,6 @@ if [ $(cat ${1} | jq -r .pce.cluster_type) == "mnc" ]; then
     echo "ansible_ssh_extra_args='-o StrictHostKeyChecking=no'" >> ../ansible/hosts
     echo "" >> ../ansible/hosts
 fi
-
 
 # Check if we are building an MNC and populate
 if [ $(cat ${1} | jq -r .pce.cluster_type) == "sc" ]; then
@@ -178,6 +181,30 @@ ansible_password=$(cat ${1} | jq -r .windows_admin_pwd)
 ansible_connection=winrm
 ansible_winrm_server_cert_validation=ignore" >> ../ansible/hosts
 fi
+
+# Write the kubernetes hosts
+if [ ${#kubernetes[@]} -gt 0 ]; then
+    echo "[kubernetes]" >> ../ansible/hosts
+    n=0
+    for i in "${kubernetes[@]}"
+    do
+    if [ ${i} == "master" ]; then
+      node_type="master"
+    else
+      node_type="worker"
+    fi
+    echo ${i}.poc.segmentationpov.com node_type=${node_type}>> ../ansible/hosts
+    done
+    n=$((n+1))
+
+# Write the Kubernetes variables
+    echo "
+[kubernetes:vars]
+ansible_user=centos
+ansible_ssh_extra_args='-o StrictHostKeyChecking=no'
+" >> ../ansible/hosts
+fi
+
 
 ##### START CREATING WKLD-LABELS.CSV #####
 
