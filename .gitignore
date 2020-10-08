@@ -19,6 +19,8 @@
 !*/pce-sw/README.md
 */ven-sw/*
 !*/ven-sw/README.md
+*.tar.gz
+*.tgz
 
 # Vagrant
 *.vagrant/
