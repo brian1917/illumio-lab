@@ -7,7 +7,7 @@
 *.deb
 *.tar.bz2
 *.msi
-*.tfstate
+*.tfstate*
 *.key
 *.xlsx
 *DS_store*
