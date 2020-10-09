@@ -1,28 +1,29 @@
 ---
-- name: Check if machine-id already replaced
+- name: Check if machine-id replaced
   stat:
-    path: /home/centos/generate_new_machine_id.txt
-  register: machine_id_already_replaced
+    path: /home/centos/successful-machine-id-reboot.txt
+  register: machine_id_succesfully_replaced
 
 - name: Remove existing machine-id
   file:
-    path: "{{ item }} "
+    path: /etc/machine-id
     state: absent
-  with_items:
-    - "/etc/machine-id"
-    - "/var/lib/dbus/machine-id"
-  when: machine_id_already_replaced.stat.exists == false
+  when: machine_id_succesfully_replaced.stat.exists == false
 
 - name: Generate new machine-id
-  shell: systemd-machine-id-setup >> generate_new_machine_id.txt
+  shell: systemd-machine-id-setup
   args:
     chdir: /home/centos
-    creates: generate_new_machine_id.txt
 
 - name: Reboot the machine if updated machine-id
   reboot:
     pre_reboot_delay: 0 # This is to appease VScode error checking. The line is useless.
-  when: machine_id_already_replaced.stat.exists == false
+  when: machine_id_succesfully_replaced.stat.exists == false
+
+- name: Create a file to show reboot done
+  file:
+    path: /home/centos/successful-machine-id-reboot.txt
+    state: touch
 
 - name: Add the Kubernetes repository
   yum_repository:
@@ -57,14 +58,29 @@
   selinux:
     state: disabled
 
+- name: Update iptables settings
+  copy:
+    dest: "/etc/sysctl.d/k8s.conf"
+    content: |
+      net.bridge.bridge-nf-call-ip6tables = 1
+      net.bridge.bridge-nf-call-iptables = 1
+
+- name: Set iptables settings
+  shell: sysctl --system && if [ $? -eq 0 ]; then touch updated_iptables_settings.txt; fi
+  args:
+    chdir: /home/centos
+    creates: updated_iptables_settings.txt
+
 - name: Disable swap
   command: swapoff -a
 
 - name: Persist disabling swap
   command: sed -i '/swap/d' /etc/fstab
+  args:
+    warn: no # Disable warning on using sed in Ansible
 
 - name: Initialize the cluster on master
-  shell: kubeadm init --pod-network-cidr=10.244.0.0/16 >> cluster_initialized.txt
+  shell: kubeadm init --pod-network-cidr=10.244.0.0/16 && if [ $? -eq 0 ]; then touch cluster_initialized.txt; fi
   args:
     chdir: /home/centos
     creates: cluster_initialized.txt
@@ -87,7 +103,9 @@
   when: node_type in ['master']
 
 - name: Install pod network on master
-  shell: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml >> pod_network_setup.txt
+  shell: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml && if [ $? -eq 0 ]; then touch pod_network_setup.txt; fi
+  become: true
+  become_user: centos
   args:
     chdir: /home/centos
     creates: pod_network_setup.txt
@@ -105,7 +123,7 @@
   when: node_type in ['master']
 
 - name: Join the cluster
-  shell: "{{ hostvars['master.poc.segmentationpov.com'].join_command }} >> node_joined.txt"
+  shell: "{{ hostvars['master.poc.segmentationpov.com'].join_command }} && if [ $? -eq 0 ]; then touch node_joined.txt; fi"
   args:
     chdir: /home/centos
     creates: node_joined.txt
@@ -113,9 +131,26 @@
 
 - name: Move the Illumio files to the master
   copy:
-    src: /home/centos/ansible/kubernetes/roles/node/files/{{ item }}
+    src: "/home/centos/ansible/kubernetes/roles/node/files/{{ item }}"
     dest: /home/centos/
-    with_items:
-      - "{{ pce.kubelink }}"
-      - "{{ pce.cven }}"
+  with_items:
+    - "{{ pce.kubelink }}"
+    - "{{ pce.cven }}"
   when: node_type in ['master']
+
+- name: Start private registry server on master
+  shell: "docker run -d -p 5000:5000 --restart=always --name registry registry:2 && if [ $? -eq 0 ]; then touch registry_created.txt; fi"
+  args:
+    chdir: /home/centos
+    creates: registry_created.txt
+  when: node_type in ['master']
+
+- name: Create docker config to trust private registry
+  copy:
+    dest: "/etc/docker/daemon.json"
+    content: '{"insecure-registries" : ["master.poc.segmentationpov.com:5000"]}'
+
+- name: Restart Docker
+  systemd:
+    name: docker
+    state: restarted
