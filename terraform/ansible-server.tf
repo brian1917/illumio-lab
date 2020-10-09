@@ -86,7 +86,7 @@ resource "null_resource" "run_ansible_play_books" {
     destination = "/home/centos/.ssh/id_rsa"
   }
 
-# Copy the ansible folder
+  # Copy the ansible folder
   provisioner "file" {
     source      = "../ansible"
     destination = "/home/centos"
@@ -95,12 +95,12 @@ resource "null_resource" "run_ansible_play_books" {
   # Run some commands to prep the ansible server
   provisioner "remote-exec" {
     inline = [
-      "sudo hostnamectl set-hostname ${var.ansible_server["name"]}", # Set hostname
+      "sudo hostnamectl set-hostname ${var.ansible_server["name"]}",   # Set hostname
       "echo 'IdentityFile ~/.ssh/id_rsa' >> /home/centos/.ssh/config", # Add identity file to ssh config
-      "chmod 600 ~/.ssh/config ~/.ssh/id_rsa", # Update permissions of config file and private SSH Key.
-      "sudo mv /home/centos/ansible/hosts /etc/ansible/hosts", # Move the Hosts file from the Ansible folder to default location
-      "pip install dnspython", # This is to do reverse DNS lookup in Ansible. We should work it into Ansible AMI soon.
-      "sudo yum install -y wget unzip" # Download and unzip workloader. We should work it into the Ansible AMI soon.
+      "chmod 600 ~/.ssh/config ~/.ssh/id_rsa",                         # Update permissions of config file and private SSH Key.
+      "sudo mv /home/centos/ansible/hosts /etc/ansible/hosts",         # Move the Hosts file from the Ansible folder to default location
+      "pip install dnspython",                                         # This is to do reverse DNS lookup in Ansible. We should work it into Ansible AMI soon.
+      "sudo yum install -y wget unzip"                                 # Download and unzip workloader. We should work it into the Ansible AMI soon.
     ]
     on_failure = continue
   }
@@ -117,7 +117,7 @@ resource "null_resource" "run_ansible_play_books" {
       "ansible-playbook ansible/pce-build/site.yml -e @ansible/variables.json --skip-tags hardening",
       "ansible-playbook ansible/wkld-setup/site.yml -e @ansible/variables.json",
       "ansible-playbook ansible/ven-repo-install/site.yml -e @ansible/variables.json --skip-tags hardening",
-      "ansible-playbook ansible/kubernetesl/site.yml -e @ansible/variables.json"
+      "ansible-playbook ansible/kubernetes/site.yml -e @ansible/variables.json"
     ]
     on_failure = continue
   }
