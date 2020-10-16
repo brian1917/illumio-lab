@@ -13,6 +13,8 @@
 *DS_store*
 *VEN_ACTIVATION_CODE*
 *PCE-AD_Sync*
+*.crt
+*.p12
 
 # PCE and VEN files, except README in the directories
 */pce-sw/*
@@ -42,7 +44,6 @@ terraform/variable-files/*
 common_shared/lxc/*.csv
 !common_shared/lxc/flows.csv
 !common_shared/lxc/workloads_20.csv
-*create-certs.sh*
 certs/generated-certs
 *VEN_ACTIVATION_CODE*
 generate-cert/output/*
