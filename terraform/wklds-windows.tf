@@ -34,7 +34,7 @@ resource "aws_instance" "windows-wkld" {
 // Use the public IP for administrative access DNS
 resource "aws_route53_record" "windows-wklds-public-dns" {
   for_each = var.windows_wklds
-  zone_id  = data.aws_route53_zone.segmentationpov.zone_id
+  zone_id  = data.aws_route53_zone.zone.zone_id
   name     = "admin-${each.key}.poc"
   type     = "A"
   ttl      = "30"
@@ -44,7 +44,7 @@ resource "aws_route53_record" "windows-wklds-public-dns" {
 // Use the private IP for network resolution
 resource "aws_route53_record" "windows-wklds-private-dns" {
   for_each = var.windows_wklds
-  zone_id  = data.aws_route53_zone.segmentationpov.zone_id
+  zone_id  = data.aws_route53_zone.zone.zone_id
   name     = "${each.key}.poc"
   type     = "A"
   ttl      = "30"

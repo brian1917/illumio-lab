@@ -39,7 +39,7 @@ resource "aws_instance" "linux-wkld" {
 // Use the public IP for access to workload remotely
 resource "aws_route53_record" "linux-wklds-public-dns" {
   for_each = var.linux_wklds
-  zone_id  = data.aws_route53_zone.segmentationpov.zone_id
+  zone_id  = data.aws_route53_zone.zone.zone_id
   name     = "admin-${each.key}.poc"
   type     = "A"
   ttl      = "30"
@@ -49,7 +49,7 @@ resource "aws_route53_record" "linux-wklds-public-dns" {
 // Use private IP for internal communication
 resource "aws_route53_record" "linux-wklds-private-dns" {
   for_each = var.linux_wklds
-  zone_id  = data.aws_route53_zone.segmentationpov.zone_id
+  zone_id  = data.aws_route53_zone.zone.zone_id
   name     = "${each.key}.poc"
   type     = "A"
   ttl      = "30"
