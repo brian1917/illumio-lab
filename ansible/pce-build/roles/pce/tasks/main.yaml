@@ -233,6 +233,15 @@
   tags:
     - pce-install
 
+- name: "Copy Compatibility Matrix"
+  copy:
+    src: /home/centos/ansible/pce-build/roles/pce/files/{{ pce.compatibility_matrix| basename }}
+    dest: /tmp/
+  when: node_type in ['core0','snc0']
+  tags:
+    - pce-install
+    - ven-bundle-install
+
 - name: "Copy VEN Bundle to PCE"
   copy:
     src: /home/centos/ansible/pce-build/roles/pce/files/{{ pce.ven_bundle | basename }}
@@ -241,9 +250,10 @@
   tags:
     - pce-install
     - ven-bundle-install
+  ignore_errors: yes # In case a 19.x PCE is being built and doesn't have compatibility matrix
 
 - name: "Install VEN Bundle"
-  command: /opt/illumio-pce/illumio-pce-ctl ven-software-install /tmp/{{ pce.ven_bundle | basename }} --default --orgs all --no-prompt
+  command: /opt/illumio-pce/illumio-pce-ctl ven-software-install /tmp/{{ pce.ven_bundle | basename }} --compatibility-matrix /tmp/{{ pce.compatibility_matrix | basename }} --default --orgs all --no-prompt
   become: yes
   become_user: ilo-pce
   when: node_type in ['core0','snc0']
@@ -252,6 +262,7 @@
   tags:
     - pce-install
     - ven-bundle-install
+  ignore_errors: yes # In case a 19.x PCE is being built and doesn't have compatibility matrix
 
 - name: "Congigure the PCE with workloader"
   import_tasks: workloader.yaml
