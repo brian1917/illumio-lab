@@ -41,7 +41,7 @@ resource "aws_instance" "pce" {
 // Create a private DNS record for each PCE node
 resource "aws_route53_record" "pce-private-dns" {
   count   = lower(var.pce["cluster_type"]) == "snc" ? 1 : lower(var.pce["cluster_type"]) == "mnc" ? 4 : lower(var.pce["cluster_type"]) == "sc" ? 8 : 0
-  zone_id = data.aws_route53_zone.segmentationpov.zone_id
+  zone_id = data.aws_route53_zone.zone.zone_id
   name    = "${lower(var.pce["cluster_type"]) == "snc" ? "${var.snc_base_name[count.index]}" : lower(var.pce["cluster_type"]) == "mnc" ? "${var.mnc_base_name[count.index]}" : "${var.sc_base_name[count.index]}"}-${var.pce["org_name"]}.poc"
   type    = "A"
   ttl     = "30"
@@ -50,8 +50,8 @@ resource "aws_route53_record" "pce-private-dns" {
 
 // Create a public DNS record for the pce-cluster for SNC and MNC
 resource "aws_route53_record" "pce-public-dns" {
-  count   = lower(var.pce["cluster_type"]) != "sc" ? 1 : 0
-  zone_id = data.aws_route53_zone.segmentationpov.zone_id
+  count   = var.pce["cluster_type"] == "" ? 0 : lower(var.pce["cluster_type"]) != "sc" ? 1 : 0
+  zone_id = data.aws_route53_zone.zone.zone_id
   name    = "${var.pce["org_name"]}.poc"
   type    = "A"
   ttl     = "30"
@@ -60,8 +60,8 @@ resource "aws_route53_record" "pce-public-dns" {
 
 // Create a public DNS record for SC clusters
 resource "aws_route53_record" "sc-pce-public-dns" {
-  count   = lower(var.pce["cluster_type"]) == "sc" ? 2 : 0
-  zone_id = data.aws_route53_zone.segmentationpov.zone_id
+  count   = var.pce["cluster_type"] == "" ? 0 : lower(var.pce["cluster_type"]) == "sc" ? 2 : 0
+  zone_id = data.aws_route53_zone.zone.zone_id
   name    = "sc${count.index + 1}-${var.pce["org_name"]}.poc"
   type    = "A"
   ttl     = "30"

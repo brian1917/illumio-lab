@@ -12,7 +12,7 @@ resource "null_resource" "hosts-file-generator" {
 resource "aws_instance" "ansible" {
   count                       = var.ansible_server["build"] == "true" ? 1 : 0
   depends_on                  = [null_resource.hosts-file-generator, aws_instance.pce, aws_instance.linux-wkld, aws_instance.windows-wkld]
-  ami                         = "ami-08e4d22f3042bfe58"
+  ami                         = "ami-08e4d22f3042bfe58" # Ohio. For virginiam use ami-0af2b43b4a197a67d
   instance_type               = var.ansible_server["type"]
   vpc_security_group_ids      = [aws_security_group.lab-rules.id]
   subnet_id                   = aws_subnet.subnet[var.ansible_server["subnet"]].id
@@ -35,7 +35,7 @@ resource "aws_instance" "ansible" {
 // Use the public IP for access to workload remotely
 resource "aws_route53_record" "ansible-public-dns" {
   count   = var.ansible_server["build"] == "true" ? 1 : 0
-  zone_id = data.aws_route53_zone.segmentationpov.zone_id
+  zone_id = data.aws_route53_zone.zone.zone_id
   name    = "admin-${var.ansible_server["name"]}.poc"
   type    = "A"
   ttl     = "30"
@@ -45,7 +45,7 @@ resource "aws_route53_record" "ansible-public-dns" {
 // Use private IP for internal communication
 resource "aws_route53_record" "ansible-private-dns" {
   count   = var.ansible_server["build"] == "true" ? 1 : 0
-  zone_id = data.aws_route53_zone.segmentationpov.zone_id
+  zone_id = data.aws_route53_zone.zone.zone_id
   name    = "${var.ansible_server["name"]}.poc"
   type    = "A"
   ttl     = "30"
@@ -53,6 +53,7 @@ resource "aws_route53_record" "ansible-private-dns" {
 }
 
 resource "null_resource" "run_ansible_play_books" {
+  count      = var.ansible_server["build"] == "true" ? 1 : 0
   depends_on = [aws_route53_record.ansible-public-dns, aws_route53_record.ansible-private-dns]
 
   // Connect using the Public IP address

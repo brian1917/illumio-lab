@@ -3,7 +3,7 @@
 
 servers=[
   { :hostname => "hostA", :ip => "192.168.200.30",},
-#  { :hostname => "hostB", :ip => "192.168.200.31",},
+ { :hostname => "hostB", :ip => "192.168.200.31",},
 #  { :hostname => "hostC", :ip => "192.168.200.32",},
 #  { :hostname => "hostD", :ip => "192.168.200.32",}
 ]

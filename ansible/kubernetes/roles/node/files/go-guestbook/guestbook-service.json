@@ -1,0 +1,26 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "guestbook",
+        "namespace": "guestbook-3",
+        "labels": {
+            "app": "guestbook"
+        },
+        "annotations": {
+            "com.illumio.role": "WEB-SVC"
+        }
+    },
+    "spec": {
+        "ports": [
+            {
+                "port": 3000,
+                "targetPort": "http-server"
+            }
+        ],
+        "selector": {
+            "app": "guestbook"
+        },
+        "type": "LoadBalancer"
+    }
+}
