@@ -44,8 +44,8 @@ resource "aws_key_pair" "auth" {
 }
 
 # Create the route 53 zone for PCE and workload DNS
-data "aws_route53_zone" "segmentationpov" {
-  name         = "segmentationpov.com"
+data "aws_route53_zone" "zone" {
+  name         = var.domain
   private_zone = false
 }
 
