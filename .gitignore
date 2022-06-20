@@ -15,6 +15,7 @@
 *PCE-AD_Sync*
 *.crt
 *.p12
+*.bz2
 
 # PCE and VEN files, except README in the directories
 */pce-sw/*

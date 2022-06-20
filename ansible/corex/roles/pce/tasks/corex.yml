@@ -139,3 +139,25 @@
   args:
     chdir: /tmp/
 
+- name: Install the latest version of bzip2
+  yum:
+    name: bzip2
+    state: latest
+
+- name: Copy VEN bundle
+  copy:
+    src: ven-bundle.bz2
+    dest: /tmp/ven-bundle.bz2
+    owner: centos
+    group: centos
+    mode: "0644"
+
+- name: Upload VEN bundle to PCE
+  command: /opt/illumio-pce/illumio-pce-ctl ven-software-install --orgs all --default --no-prompt --force /tmp/ven-bundle.bz2
+  become: yes
+  become_user: ilo-pce
+  ignore_errors: True
+  args:
+    chdir: /tmp/
+
+
