@@ -5,6 +5,7 @@
     - role: linux
   tags:
     - linux-base
+  ignore_errors: yes
 
 - hosts: win
   gather_facts: True
@@ -12,6 +13,7 @@
     - role: windows
   tags:
     - windows-base
+  ignore_errors: yes
 
 - hosts: dc
   gather_facts: True
@@ -20,6 +22,7 @@
     - role: dc
   tags:
     - dc
+  ignore_errors: yes
 
 - hosts: member
   gather_facts: True
@@ -28,3 +31,12 @@
     - role: member
   tags:
     - member
+  ignore_errors: yes
+
+- hosts: promoted_dc
+  gather_facts: True
+  roles:
+    - role: promoted_dc
+  tags:
+    - promoted_dc
+  ignore_errors: yes

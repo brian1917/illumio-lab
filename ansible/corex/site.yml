@@ -1,0 +1,5 @@
+---
+- hosts: corex
+  become: true
+  roles:
+    - role: pce

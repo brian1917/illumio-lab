@@ -8,7 +8,7 @@
 
 - name: Point DNS to DC
   win_dns_client:
-    adapter_names: "Ethernet 3"
+    adapter_names: "*"
     ipv4_addresses: "{{ hostvars[item]['ansible_facts']['ip_addresses'][0] }}"
   loop: "{{ query('inventory_hostnames', 'dc') }}"
 

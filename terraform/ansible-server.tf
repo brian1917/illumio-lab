@@ -93,6 +93,12 @@ resource "null_resource" "run_ansible_play_books" {
     destination = "/home/centos"
   }
 
+  # Copy the variables JSON file
+  provisioner "file" {
+    source      = var.variables_file
+    destination = "/home/centos/ansible/variables.json"
+  }
+
   # Run some commands to prep the ansible server
   provisioner "remote-exec" {
     inline = [
@@ -106,18 +112,12 @@ resource "null_resource" "run_ansible_play_books" {
     on_failure = continue
   }
 
-  # Copy the variables JSON file
-  provisioner "file" {
-    source      = var.variables_file
-    destination = "/home/centos/ansible/variables.json"
-  }
-
   # Build the PCE
   provisioner "remote-exec" {
     inline = [
       "ansible-playbook ansible/pce-build/site.yml -e @ansible/variables.json --skip-tags hardening",
       "ansible-playbook ansible/wkld-setup/site.yml -e @ansible/variables.json",
-      "ansible-playbook ansible/ven-repo-install/site.yml -e @ansible/variables.json --skip-tags hardening",
+      "ansible-playbook ansible/ven-repo-install/site.yml -e @ansible/variables.json",
       "ansible-playbook ansible/kubernetes/site.yml -e @ansible/variables.json"
     ]
     on_failure = continue

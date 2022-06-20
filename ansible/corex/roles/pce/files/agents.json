@@ -1,0 +1,6824 @@
+[
+ {
+  "hostname": "AADS-01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.62",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 63638,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 1900,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49735,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49718,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49676,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49675,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49670,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ADMCTR-01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.51",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 58809,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 1900,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49731,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49711,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49692,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49675,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49670,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ADMINVR-01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.117",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.65"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 61569,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 1900,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49736,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49706,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49693,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49672,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49671,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Schedule"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ADMINVR-02",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.105",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.65"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 56250,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 1900,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49741,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49715,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49678,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49676,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49671,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Schedule"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49670,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ALUDGATE-DT",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.196",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.193"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "19041.1.amd64fre.vb_release.191206-1406 (Windows 10 Enterprise Evaluation)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "CDPSvc"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 7680,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DoSvc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49713,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49673,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49671,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49669,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49667,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Schedule"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49666,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5040,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "CDPSvc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ansible-01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.8",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1127.el7.x86_64 #1 SMP Tue Mar 31 23:36:51 UTC 2020 (CentOS Linux release 7.8.2003 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 711,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ast-db01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.47",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 64034,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3306,
+     "process_name": "/usr/sbin/mysqld",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ast-db02",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.6",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 64034,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3306,
+     "process_name": "/usr/sbin/mysqld",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ast-proc01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.20",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 8070,
+     "process_name": "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.322.b06-1.el7_9.x86_64/jre/bin/java",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ast-proc02",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.56",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 8070,
+     "process_name": "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.322.b06-1.el7_9.x86_64/jre/bin/java",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ast-web01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.23",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 443,
+     "process_name": "/usr/sbin/httpd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ast-web02",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.37",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 443,
+     "process_name": "/usr/sbin/httpd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ast-web03",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.13",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 443,
+     "process_name": "/usr/sbin/httpd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "BACKUP-01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.182",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.129"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 50442,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 1900,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49734,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49714,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49697,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49675,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49672,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "BACKUP-02",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.190",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.129"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 64969,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 1900,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49733,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49716,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49688,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49667,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49666,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "BWYATT-DT",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.252",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.193"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "19041.1.amd64fre.vb_release.191206-1406 (Windows 10 Enterprise Evaluation)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "CDPSvc"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 7680,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DoSvc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49723,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "PolicyAgent"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49714,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49672,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49671,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49669,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49667,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Schedule"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49666,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5040,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "CDPSvc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "DC-01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.32",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 464,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 389,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DCLocator"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 88,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 53,
+     "process_name": "C:\\Windows\\System32\\dns.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DNS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 464,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 88,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 61109,
+     "process_name": "C:\\Windows\\System32\\dfsrs.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DFSR"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49702,
+     "process_name": "C:\\Windows\\System32\\dns.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DNS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49682,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49676,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49674,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49673,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49668,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49666,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 9389,
+     "process_name": "C:\\Windows\\ADWS\\Microsoft.ActiveDirectory.WebServices.exe",
+     "user": "",
+     "package": "",
+     "service_name": "ADWS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3269,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "GlobalCatalog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3268,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "GlobalCatalog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 636,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "LDAPSSL"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 593,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcEptMapper"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 389,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "LDAPServer"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 53,
+     "process_name": "C:\\Windows\\System32\\dns.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DNS"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "DC-02",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.38",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 464,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 389,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DCLocator"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 88,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 53,
+     "process_name": "C:\\Windows\\System32\\dns.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DNS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 464,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 88,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 59474,
+     "process_name": "C:\\Windows\\System32\\dfsrs.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DFSR"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 55679,
+     "process_name": "C:\\Windows\\System32\\dns.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DNS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49714,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49698,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49674,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49673,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49670,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49666,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 9389,
+     "process_name": "C:\\Windows\\ADWS\\Microsoft.ActiveDirectory.WebServices.exe",
+     "user": "",
+     "package": "",
+     "service_name": "ADWS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3269,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "GlobalCatalog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3268,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "GlobalCatalog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 636,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "LDAPSSL"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 593,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcEptMapper"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 389,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "LDAPServer"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 53,
+     "process_name": "C:\\Windows\\System32\\dns.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DNS"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "DC-03",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.27",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 464,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 389,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DCLocator"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 88,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 53,
+     "process_name": "C:\\Windows\\System32\\dns.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DNS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 464,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 88,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 58354,
+     "process_name": "C:\\Windows\\System32\\dns.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DNS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49752,
+     "process_name": "C:\\Windows\\System32\\dfsrs.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DFSR"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49712,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49676,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49674,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49673,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49670,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49669,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Kdc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 9389,
+     "process_name": "C:\\Windows\\ADWS\\Microsoft.ActiveDirectory.WebServices.exe",
+     "user": "",
+     "package": "",
+     "service_name": "ADWS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3269,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "GlobalCatalog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3268,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "GlobalCatalog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 636,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "LDAPSSL"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 593,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcEptMapper"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 389,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "LDAPServer"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 53,
+     "process_name": "C:\\Windows\\System32\\dns.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DNS"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "FILESVR-01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.15",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 57022,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 1900,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49734,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49713,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49676,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49675,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49671,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Schedule"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "FILESVR-02",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.22",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 61232,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 1900,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49740,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49720,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49702,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49675,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49671,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "inf-syslog01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.9",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 67,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 514,
+     "process_name": "/usr/sbin/rsyslogd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 514,
+     "process_name": "/usr/sbin/rsyslogd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": "",
+     "service_name": "`"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "inf-time01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.5",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 67,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": "",
+     "service_name": "`"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "/usr/sbin/ntpd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "/usr/sbin/ntpd",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "JUMPSVR-01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.25",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "9600.20334.amd64fre.winblue_ltsb_escrow.220324-1651 (Windows Server 2012 R2 Standard)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49244,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "PolicyAgent"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49243,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49242,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49156,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49155,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49154,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Schedule"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49153,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49152,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "JUMPSVR-02",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.24",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "9600.20334.amd64fre.winblue_ltsb_escrow.220324-1651 (Windows Server 2012 R2 Standard)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49251,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "PolicyAgent"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49250,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49249,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49156,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49155,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49154,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Schedule"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49153,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49152,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "LKNOPE-DT",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.203",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.193"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "19041.1.amd64fre.vb_release.191206-1406 (Windows 10 Enterprise Evaluation)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "CDPSvc"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 7680,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DoSvc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49717,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49672,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49671,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49669,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49667,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Schedule"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49666,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5040,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "CDPSvc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcEptMapper"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ord-db01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.26",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 64034,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3306,
+     "process_name": "/usr/sbin/mysqld",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ord-db02",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.10",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 64034,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3306,
+     "process_name": "/usr/sbin/mysqld",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ord-proc01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.54",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 8070,
+     "process_name": "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.322.b06-1.el7_9.x86_64/jre/bin/java",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ord-proc02",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.36",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 8070,
+     "process_name": "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.322.b06-1.el7_9.x86_64/jre/bin/java",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ord-web01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.59",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 443,
+     "process_name": "/usr/sbin/httpd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ord-web02",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.48",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 443,
+     "process_name": "/usr/sbin/httpd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "ord-web03",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.30",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "linux",
+  "os_id": "centos-x86_64-7.0",
+  "os_detail": "3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 (CentOS Linux release 7.7.1908 (Core))",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 68,
+     "process_name": "/usr/sbin/dhclient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 443,
+     "process_name": "/usr/sbin/httpd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 22,
+     "process_name": "/usr/sbin/sshd",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 52311,
+     "process_name": "/opt/BESClient/bin/BESClient",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 111,
+     "process_name": "/usr/sbin/rpcbind",
+     "user": "",
+     "package": ""
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "PDQSVR-01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.40",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 50469,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 1900,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49741,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49720,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49676,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49675,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49671,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Schedule"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "PKISVR-01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.14",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 50436,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 1900,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49726,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49706,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49673,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49671,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49670,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "PRNSVR-01",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.33",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 63197,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 1900,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49731,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49711,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49676,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49671,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49670,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "PRNSVR-02",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.41",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.1"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "14393.5066.amd64fre.rs1_release.220401-1841 (Windows Server 2016 Datacenter)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 61398,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 1900,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SSDPSRV"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49735,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49711,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49692,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49672,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49666,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Schedule"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "RSWANSON-DT",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.249",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.193"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "19041.1.amd64fre.vb_release.191206-1406 (Windows 10 Enterprise Evaluation)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "CDPSvc"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 7680,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DoSvc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49717,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49672,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49671,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49670,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49667,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Schedule"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49666,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5040,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "CDPSvc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ },
+ {
+  "hostname": "THAVERFORD-DT",
+  "interfaces": [
+   {
+    "name": "eth0",
+    "address": "192.168.128.254",
+    "cidr_block": 26,
+    "default_gateway_address": "192.168.128.193"
+   }
+  ],
+  "os_platform": "windows",
+  "os_id": "win-x86_64-server",
+  "os_detail": "19041.1.amd64fre.vb_release.191206-1406 (Windows 10 Enterprise Evaluation)",
+  "services": {
+   "open_service_ports": [
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5355,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5353,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Dnscache"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 5050,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "CDPSvc"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 4500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 500,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "IKEEXT"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 138,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-NS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 137,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-DS"
+    },
+    {
+     "protocol": "udp",
+     "address": "0.0.0.0",
+     "port": 123,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "W32Time"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 47001,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 7680,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "DoSvc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5986,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5985,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "WinRm"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 445,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "SMB"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49719,
+     "process_name": "C:\\Windows\\System32\\services.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49714,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "PolicyAgent"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49672,
+     "process_name": "C:\\Windows\\System32\\spoolsv.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Spooler"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49671,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Netlogon"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49669,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "SessionEnv"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49667,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "Schedule"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49666,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "EventLog"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49665,
+     "process_name": "C:\\Windows\\System32\\wininit.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 49664,
+     "process_name": "C:\\Windows\\System32\\lsass.exe",
+     "user": "",
+     "package": ""
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 5040,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "CDPSvc"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 3389,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "TermService"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 139,
+     "process_name": "System",
+     "user": "",
+     "package": "",
+     "service_name": "NetBIOS-SS"
+    },
+    {
+     "protocol": "tcp",
+     "address": "0.0.0.0",
+     "port": 135,
+     "process_name": "C:\\Windows\\System32\\svchost.exe",
+     "user": "",
+     "package": "",
+     "service_name": "RpcSs"
+    }
+   ]
+  }
+ }
+]

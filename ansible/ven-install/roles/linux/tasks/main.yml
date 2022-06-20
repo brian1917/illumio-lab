@@ -15,3 +15,5 @@
   become_user: root
   shell:
     cmd: /opt/illumio_ven/illumio-ven-ctl activate --management-server {{ pce.org_name }}.{{ pce.domain_name }}:{{ pce.front_end_https_port }} --activation-code "{{ pairing_key }}"
+  args:
+    creates: /opt/illumio_ven/illumio-ven-ctl

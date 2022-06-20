@@ -3,7 +3,7 @@
     "apiVersion": "v1",
     "metadata": {
         "name": "redis-master",
-        "namespace": "guestbook-3",
+        "namespace": "guestbook",
         "labels": {
             "app": "redis",
             "role": "master"

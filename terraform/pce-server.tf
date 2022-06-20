@@ -20,9 +20,10 @@ resource "aws_instance" "pce" {
   count                       = lower(var.pce["cluster_type"]) == "snc" ? 1 : lower(var.pce["cluster_type"]) == "mnc" ? 4 : lower(var.pce["cluster_type"]) == "sc" ? 8 : 0
   ami                         = data.aws_ami.amis[var.pce["ami"]].id
   instance_type               = var.pce["type"]
-  vpc_security_group_ids      = [aws_security_group.pce-rules.id]
+  vpc_security_group_ids      = [aws_security_group.pce-rules[0].id]
   subnet_id                   = aws_subnet.subnet[var.pce["subnet"]].id
   associate_public_ip_address = true
+  ebs_optimized               = true
   key_name                    = "${var.aws_vpc_name}-key"
   root_block_device {
     delete_on_termination = true
@@ -71,6 +72,7 @@ resource "aws_route53_record" "sc-pce-public-dns" {
 
 # PCE Security Groups
 resource "aws_security_group" "pce-rules" {
+  count       = var.pce["cluster_type"] == "" ? 0 : 1
   name        = "pce-rules"
   description = "Communication for PCE server."
   vpc_id      = aws_vpc.vpc.id

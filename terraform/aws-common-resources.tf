@@ -24,9 +24,10 @@ resource "aws_route" "default_route" {
 
 # Create a subnet for each entry povided
 resource "aws_subnet" "subnet" {
-  for_each   = var.subnets
-  vpc_id     = aws_vpc.vpc.id
-  cidr_block = each.value
+  for_each                = var.subnets
+  vpc_id                  = aws_vpc.vpc.id
+  cidr_block              = each.value
+  map_public_ip_on_launch = true
   tags = {
     Name  = "${var.aws_vpc_name}-${each.key}"
     Email = var.email_tag
@@ -85,6 +86,14 @@ resource "aws_security_group" "lab-rules" {
     to_port     = 0
     protocol    = -1
     cidr_blocks = var.admin_cidr_list
+  }
+
+  // Allow any inbound on PCE front end https port
+  ingress {
+    from_port   = var.pce["front_end_https_port"]
+    to_port     = var.pce["front_end_https_port"]
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   // Allow outbound all

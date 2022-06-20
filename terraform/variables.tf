@@ -56,11 +56,15 @@ variable "subnets" {
 }
 variable "linux_wklds" {
   type        = map
-  description = "Key-value pairs of instance-name:subnet. See variables.json for examples."
+  description = "Map of linux workloads. See variables.json for examples."
+}
+variable "additional_pces" {
+  type        = map
+  description = "Map of additional pces. See variables.json for examples."
 }
 variable "windows_wklds" {
   type        = map
-  description = "Key-value pairs for Windows workloads. See variables.json for examples."
+  description = "Map of for Windows workloads. See variables.json for examples."
 }
 variable "kubernetes" {
   type        = map

@@ -1,0 +1,15 @@
+---
+- name: Ensure a server is a domain controller
+  win_domain_controller:
+    dns_domain_name: poc.segmentationpov.com
+    domain_admin_user: Administrator@poc.segmentationpov.com
+    domain_admin_password: Illumio123
+    safe_mode_password: Illumio123
+    state: domain_controller
+    log_path: C:\ansible_win_domain_controller.txt
+  register: promoted_dc
+
+- name: Reboot server
+  win_reboot:
+    pre_reboot_delay: 15
+  when: promoted_dc.reboot_required

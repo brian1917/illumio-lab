@@ -18,46 +18,46 @@ if [[ $1 == "auto" ]]; then
     flows_file="/vagrant/"${flows_file}
 fi
 
-# # INSTALL LXD
-# sudo apt remove --purge lxd lxd-client -y
-# snap install lxd --channel=3.0/stable
+# INSTALL LXD
+sudo apt remove --purge lxd lxd-client -y
+snap install lxd --channel=3.0/stable
 
-# # CONFIGURE LXD
-# cat <<EOF | lxd init --preseed
-# config: {}
-# networks:
-# - config:
-#     ipv4.address: auto
-#     ipv6.address: none
-#   description: ""
-#   managed: false
-#   name: lxdbr0
-#   type: ""
-# storage_pools:
-# - config:
-#     size: 55GB
-#   description: ""
-#   name: default
-#   driver: zfs
-# profiles:
-# - config: {}
-#   description: ""
-#   devices:
-#     eth0:
-#       name: eth0
-#       nictype: bridged
-#       parent: lxdbr0
-#       type: nic
-#     root:
-#       path: /
-#       pool: default
-#       type: disk
-#   name: default
-# cluster: null
-# EOF
+# CONFIGURE LXD
+cat <<EOF | lxd init --preseed
+config: {}
+networks:
+- config:
+    ipv4.address: auto
+    ipv6.address: none
+  description: ""
+  managed: false
+  name: lxdbr0
+  type: ""
+storage_pools:
+- config:
+    size: 55GB
+  description: ""
+  name: default
+  driver: zfs
+profiles:
+- config: {}
+  description: ""
+  devices:
+    eth0:
+      name: eth0
+      nictype: bridged
+      parent: lxdbr0
+      type: nic
+    root:
+      path: /
+      pool: default
+      type: disk
+  name: default
+cluster: null
+EOF
 
-# # ADD TO THE HOSTS FILE
-# echo "${pce_ip_address}   ${snc_pce_fqdn}" >> /etc/hosts
+# ADD TO THE HOSTS FILE
+echo "${pce_ip_address}   ${snc_pce_fqdn}" >> /etc/hosts
 
 # CREATE A TEMPORARY CSV IN TMP DIRECTORY WITH LINE ENDINGS STRIPPED
 sed 's/\r$//' ${workloads_file} > "/tmp/$(basename ${workloads_file})"

@@ -53,3 +53,7 @@ common-shared/splunk/*
 
 vagrant/mnc-pce/*
 
+# Executables
+vensim
+workloader
+

@@ -41,6 +41,7 @@ if [ $(cat ${1} | jq -r .pce.cluster_type) == "snc" ]; then
     echo "[pce:vars]" >> ../ansible/hosts
     echo "ansible_user=centos" >> ../ansible/hosts
     echo "ansible_ssh_extra_args='-o StrictHostKeyChecking=no'" >> ../ansible/hosts
+    echo "ansible_python_interpreter=/usr/bin/python" >> ../ansible/hosts
     echo "" >> ../ansible/hosts
 fi
 
@@ -55,6 +56,7 @@ if [ $(cat ${1} | jq -r .pce.cluster_type) == "mnc" ]; then
     echo "[pce:vars]" >> ../ansible/hosts
     echo "ansible_user=centos" >> ../ansible/hosts
     echo "ansible_ssh_extra_args='-o StrictHostKeyChecking=no'" >> ../ansible/hosts
+    echo "ansible_python_interpreter=/usr/bin/python" >> ../ansible/hosts
     echo "" >> ../ansible/hosts
 fi
 
@@ -79,6 +81,7 @@ if [ $(cat ${1} | jq -r .pce.cluster_type) == "sc" ]; then
     echo "[sc2:vars]" >> ../ansible/hosts
     echo "ansible_user=centos" >> ../ansible/hosts
     echo "ansible_ssh_extra_args='-o StrictHostKeyChecking=no'" >> ../ansible/hosts
+    echo "ansible_python_interpreter=/usr/bin/python" >> ../ansible/hosts
     echo "" >> ../ansible/hosts
 fi
 

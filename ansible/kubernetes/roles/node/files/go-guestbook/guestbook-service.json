@@ -3,7 +3,7 @@
     "apiVersion": "v1",
     "metadata": {
         "name": "guestbook",
-        "namespace": "guestbook-3",
+        "namespace": "guestbook",
         "labels": {
             "app": "guestbook"
         },
