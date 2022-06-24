@@ -1,0 +1,15 @@
+# Unpair the VEN and remove the VEN software
+- name: Unpair VEN and uninstall software
+  become: true
+  become_user: root
+  shell:
+    cmd: /opt/illumio_ven/illumio-ven-ctl unpair saved
+    removes: /opt/illumio_ven/illumio-ven-ctl
+
+# Remove the VEN package file
+- name: Remove the VEN pacakge
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_fileglob:
+    - "/tmp/illumio-ven-*.rpm"

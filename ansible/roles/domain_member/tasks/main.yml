@@ -1,0 +1,32 @@
+---
+- name: Setup Ansible Facts with_inventory_hostnames
+  setup:
+    gather_subset: "all"
+  delegate_to: "{{ item }}"
+  delegate_facts: True
+  loop: "{{ query('inventory_hostnames', 'dc') }}"
+
+- name: Point DNS to DC
+  win_dns_client:
+    adapter_names: "*"
+    ipv4_addresses: "{{ hostvars[item]['ansible_facts']['ip_addresses'][0] }}"
+  loop: "{{ query('inventory_hostnames', 'dc') }}"
+
+- name: Join domain
+  win_domain_membership:
+    dns_domain_name: poc.segmentationpov.com
+    hostname: "{{ inventory_hostname_short }}"
+    domain_admin_user: Administrator@poc.segmentationpov.com
+    domain_admin_password: "{{ windows_admin_pwd }}"
+    state: domain
+  register: domain_state
+
+- name: Reboot server
+  win_reboot:
+    pre_reboot_delay: 15
+  when: domain_state.changed
+
+- name: Update RDP groups
+  win_shell: net localgroup "Remote Desktop Users" "Domain Users" /add
+  args:
+    executable: cmd.exe

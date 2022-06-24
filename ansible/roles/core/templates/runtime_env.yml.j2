@@ -1,0 +1,61 @@
+# PCE runtime_env.yml parameters
+install_root: /opt/illumio-pce
+runtime_data_root: /var/lib/illumio-pce/runtime
+persistent_data_root: /var/lib/illumio-pce/data
+ephemeral_data_root: /var/lib/illumio-pce/tmp
+log_dir: /var/log/illumio-pce
+private_key_cache_dir: /var/lib/illumio-pce/keys
+{% if pce.cluster_type != "sc" %}
+pce_fqdn: {{ pce.org_name }}.{{ pce.domain_name }}
+{% endif %}
+{% if pce.cluster_type == "sc" and inventory_hostname[:3] == "sc1" %}
+pce_fqdn: sc1-{{ pce.org_name }}.{{ pce.domain_name }}
+{% endif %}
+{% if pce.cluster_type == "sc" and inventory_hostname[:3] == "sc2" %}
+pce_fqdn: sc2-{{ pce.org_name }}.{{ pce.domain_name }}
+{% endif %}
+{# This is for SNC, MNC, and SC1 #}
+{% for node in hostvars[inventory_hostname]['groups']['pce'] %}
+{% if pce.cluster_type == "snc" or pce.cluster_type == "mnc" or inventory_hostname[:3] == "sc1" %}
+{% if hostvars[node].node_type == "core0" or hostvars[node].node_type == "snc0" %}
+service_discovery_fqdn: {{ node }}
+{% endif %}
+{% endif %}
+{% endfor %}
+{# End SNC, MNC, and SC1 #}
+{# This is for SC2 #}
+{% for node in hostvars[inventory_hostname]['groups']['sc2'] %}
+{% if inventory_hostname[:3] == "sc2" %}
+{% if hostvars[node].node_type == "core0" %}
+service_discovery_fqdn: {{ node }}
+{% endif %}
+{% endif %}
+{% endfor %}
+{# End SC2 #}
+service_discovery_encryption_key: {{ pce.service_discovery_encryption_key }}
+cluster_public_ips:
+  cluster_fqdn:
+{% for node in hostvars[inventory_hostname]['groups']['pce'] %}
+{% if hostvars[node].node_type == "core0" or hostvars[node].node_type == "core1" or hostvars[node].node_type == "snc0" %}
+    - {{ hostvars[node].ipify_public_ip }}
+{% endif %}
+{% endfor %}
+{% if node_type == "core0" or node_type == "core1" %}
+node_type: core
+{% else %}
+node_type: {{ node_type }}
+{% endif %}
+web_service_certificate: /var/lib/illumio-pce/cert/{{ pce.cert | basename }}
+web_service_private_key: /var/lib/illumio-pce/cert/{{ pce.key | basename }}
+trusted_ca_bundle: /etc/ssl/certs/ca-bundle.crt
+front_end_https_port: {{ pce.front_end_https_port }}
+front_end_event_service_port: {{ pce.front_end_event_service_port }}
+email_address: noreply@{{ pce.org_name }}.{{ pce.domain_name }}
+email_display_name: noreply
+expose_user_invitation_link: true
+smtp_relay_address: 127.0.0.1:25
+syslog_event_export_format: json
+export_flow_summaries_to_syslog:
+ - potentially_blocked
+ - blocked
+ - accepted

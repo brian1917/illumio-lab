@@ -16,6 +16,7 @@
 *.crt
 *.p12
 *.bz2
+*.hosts
 
 # PCE and VEN files, except README in the directories
 */pce-sw/*
@@ -55,6 +56,6 @@ common-shared/splunk/*
 vagrant/mnc-pce/*
 
 # Executables
-vensim
-workloader
+*/vensim
+*/workloader
 

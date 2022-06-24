@@ -1,9 +1,0 @@
-- name: "Build the CoreX PCE"
-  import_tasks: corex.yml
-  tags:
-    - pce
-
-- name: "Configure with workloader and vensim"
-  import_tasks: lab.yml
-  tags:
-    - lab

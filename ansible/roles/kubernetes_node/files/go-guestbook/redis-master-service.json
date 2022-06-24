@@ -1,0 +1,27 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "redis-master",
+        "namespace": "guestbook",
+        "labels": {
+            "app": "redis",
+            "role": "master"
+        },
+        "annotations": {
+            "com.illumio.role": "REDIS-MASTER-SVC"
+        }
+    },
+    "spec": {
+        "ports": [
+            {
+                "port": 6379,
+                "targetPort": "redis-server"
+            }
+        ],
+        "selector": {
+            "app": "redis",
+            "role": "master"
+        }
+    }
+}

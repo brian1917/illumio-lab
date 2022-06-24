@@ -1,9 +1,0 @@
----
-- hosts: linux
-  become: true
-  roles:
-    - role: linux
-
-- hosts: dc, member
-  roles:
-    - role: windows

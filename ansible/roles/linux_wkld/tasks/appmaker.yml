@@ -1,0 +1,55 @@
+---
+- name: Find appmaker running processes
+  shell: "ps -ef | grep -v grep | grep -w appmaker | awk '{print $2}'"
+  register: running_processes
+  tags:
+    - stop
+
+- name: Kill running appmaker processes
+  become: true
+  become_user: root
+  shell: "kill {{ item }}"
+  with_items: "{{ running_processes.stdout_lines }}"
+  tags:
+    - stop
+
+- name: Wait for processes to be killed
+  wait_for:
+    path: "/proc/{{ item }}/status"
+    state: absent
+  with_items: "{{ running_processes.stdout_lines }}"
+  ignore_errors: yes
+  register: killed_processes
+  tags:
+    - stop
+
+- name: Force kill stuck appmaker processes
+  become: true
+  become_user: root
+  shell: "kill -9 {{ item }}"
+  with_items: "{{ killed_processes.results | select('failed') | map(attribute='item') | list }}"
+  tags:
+    - stop
+
+- name: Copy appmaker
+  copy:
+    src: ../files/appmaker
+    dest: "/home/centos/appmaker"
+    mode: a+x
+  tags:
+    - deploy
+
+- name: Copy CSV
+  copy:
+    src: "../files/{{ csv }}"
+    dest: "/home/centos/connections.csv"
+  tags:
+    - deploy
+
+- name: Start appmaker
+  become: true
+  become_user: root
+  shell:
+    cmd: nohup /home/centos/appmaker </dev/null >/dev/null 2>&1 &
+  tags:
+    - deploy

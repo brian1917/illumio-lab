@@ -1,0 +1,30 @@
+---
+- name: Remove existing CA
+  file:
+    path: /opt/illumio_ven_data/etc/ipsec.d/cacerts/ca.crt
+    state: absent
+  tags:
+    - remove
+    - never
+
+- name: Remove existing cert
+  file:
+    path: "/opt/illumio_ven_data/etc/ipsec.d/private/{{ inventory_hostname }}.p12"
+    state: absent
+  tags:
+    - remove
+    - never
+
+- name: Add the CA file
+  copy:
+    src: ca.crt
+    dest: /opt/illumio_ven_data/etc/ipsec.d/cacerts/ca.crt
+    owner: ilo-ven
+    group: ilo-ven
+
+- name: Add the PK12 container
+  copy:
+    src: "{{ inventory_hostname }}.p12"
+    dest: "/opt/illumio_ven_data/etc/ipsec.d/private/{{ inventory_hostname }}.p12"
+    owner: ilo-ven
+    group: ilo-ven

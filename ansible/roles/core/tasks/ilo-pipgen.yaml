@@ -1,0 +1,69 @@
+- name: Make sure sure iptables-services is installed
+  package:
+    name: iptables-services
+    state: present
+
+- name: Disable and mask firewalld
+  systemd:
+    name: firewalld
+    enabled: no
+    masked: yes
+    state: stopped
+  when: "'firewalld' in ansible_facts.packages"
+
+- name: Enable iptables
+  systemd:
+    name: iptables
+    enabled: yes
+    state: started
+
+- name: Enable ip6tables
+  systemd:
+    name: ip6tables
+    enabled: yes
+    state: started
+
+- name: Create /var/tmp/illumio-pipgen on each node_type if it does not exist
+  file:
+    path: /var/tmp/illumio-pipgen
+    state: directory
+  when: node_type in ['core0','snc0']
+
+- name: Copy the ilo-pipgen script to the directory
+  copy:
+    src: ilo-pipgen
+    dest: /var/tmp/illumio-pipgen
+    mode: a+x
+  when: node_type in ['core0','snc0']
+
+- name: Create file with ip addresses
+  template:
+    src: ip_addrs_input.txt.j2
+    dest: /var/tmp/illumio-pipgen/ip_addrs_input.txt
+  when: node_type in ['core0','snc0']
+
+- name: Execute ilo-pipgen script
+  script:
+    cmd: ./ilo-pipgen -i ip_addrs_input.txt -o iptables -p {{ pce.front_end_https_port }},{{ pce.front_end_event_service_port }}
+    chdir: /var/tmp/illumio-pipgen/
+  when: node_type in ['core0','snc0']
+
+- name: Download iptables to ansible server
+  fetch:
+    src: /var/tmp/illumio-pipgen/iptables
+    dest: roles/pce/files/iptables
+    flat: yes
+  when: node_type in ['core0','snc0']
+
+- name: Copy the output to iptables
+  copy:
+    src: iptables
+    dest: /etc/sysconfig/iptables
+    backup: yes
+  become: yes
+
+- name: Restart the iptables service
+  service:
+    name: iptables
+    state: restarted
+  become: yes

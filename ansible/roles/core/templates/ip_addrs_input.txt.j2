@@ -1,0 +1,3 @@
+{% for node in hostvars[inventory_hostname]['groups']['pce'] %}
+{{ hostvars[node].ansible_default_ipv4.address }}
+{% endfor %}

@@ -1,0 +1,10 @@
+---
+- name: Change the hostname
+  win_hostname:
+    name: "{{ inventory_hostname_short }}"
+  register: hostname
+
+- name: Reboot server
+  win_reboot:
+    pre_reboot_delay: 2
+  when: hostname.changed

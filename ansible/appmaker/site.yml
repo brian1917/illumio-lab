@@ -1,8 +1,0 @@
----
-- hosts: win
-  roles:
-    - role: windows
-
-- hosts: linux
-  roles:
-    - role: linux

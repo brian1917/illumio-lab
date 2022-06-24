@@ -1,0 +1,41 @@
+{
+    "kind": "ReplicationController",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "guestbook",
+        "namespace": "guestbook",
+        "labels": {
+            "app": "guestbook"
+        }
+    },
+    "spec": {
+        "replicas": 3,
+        "selector": {
+            "app": "guestbook"
+        },
+        "template": {
+            "metadata": {
+                "labels": {
+                    "app": "guestbook"
+                },
+                "annotations": {
+                    "com.illumio.role": "WEB"
+                }
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "name": "guestbook",
+                        "image": "k8s.gcr.io/guestbook:v3",
+                        "ports": [
+                            {
+                                "name": "http-server",
+                                "containerPort": 3000
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

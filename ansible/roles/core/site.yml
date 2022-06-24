@@ -1,0 +1,5 @@
+---
+- hosts: pce, sc2
+  become: true
+  roles:
+    - role: pce
