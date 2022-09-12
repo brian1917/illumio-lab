@@ -36,6 +36,8 @@
     creates: pce.yaml
 
 - name: Download default pairing key
+  become: yes
+  become_user: centos
   shell:
     cmd: /home/centos/bin/workloader get-pk -f pk
   args:
@@ -43,10 +45,14 @@
     creates: /home/centos/vensim/pk
 
 - name: Register pairing key
+  become: yes
+  become_user: centos
   command: "cat /home/centos/vensim/pk"
   register: activation_code
   
 - name: Activate VENs with vensim
+  become: yes
+  become_user: centos
   shell:
     cmd: /home/centos/bin/vensim activate -w agents.json -m {{ org }}.poc.segmentationpov.com:8443 -a {{ activation_code.stdout }}
   args:
@@ -54,20 +60,26 @@
     creates: /home/centos/vensim/agents
 
 - name: Import workload labels and unmanaged workloads
+  become: yes
+  become_user: centos
   shell:
     cmd: /home/centos/bin/workloader wkld-import wklds.csv --update-pce --no-prompt --umwl
   args:
     chdir: /home/centos/vensim
 
 - name: Import IP lists
+  become: yes
+  become_user: centos
   shell:
     cmd: /home/centos/bin/workloader ipl-import iplists.csv --update-pce --no-prompt --provision
   args:
     chdir: /home/centos/vensim
 
 - name: Import traffic
+  become: yes
+  become_user: centos
   shell:
-    cmd: /home/centos/bin/vensim traffic -w agents.json -m {{ org }}.poc.segmentationpov.com:8443 -t traffic.csv -d "2022-06-01;yesterday"
+    cmd: /home/centos/bin/vensim traffic -w agents.json -m {{ org }}.poc.segmentationpov.com:8443 -t traffic.csv -d "2022-07-01;yesterday"
   args:
     chdir: /home/centos/vensim
     creates: /home/centos/vensim/flows
@@ -88,14 +100,13 @@
     hour: "0"
     job: "rm /home/centos/vensim/vensim.log"
 
-- name: Set crontab to run traffic update every day at midnight
+- name: Set crontab to run traffic update every 10 minutes
   become: true
   become_user: centos
   ansible.builtin.cron:
-    name: "Run traffic update every day at midnight"
-    hour: "0"
-    minute: "0"
-    job: "cd /home/centos/vensim && vensim traffic -m {{ org }}.poc.segmentationpov.com:8443 -w /home/centos/vensim/agents.json -t /home/centos/vensim/traffic.csv -d yesterday >/dev/null 2>&1"
+    name: "Run traffic update every 10 minutes"
+    minute: "*/10"
+    job: "cd /home/centos/vensim && vensim traffic -m {{ org }}.poc.segmentationpov.com:8443 -w /home/centos/vensim/agents.json -t /home/centos/vensim/traffic.csv -d today >/dev/null 2>&1"
 
 - name: Set crontab to send heartbeat every 5 minutes
   become: true

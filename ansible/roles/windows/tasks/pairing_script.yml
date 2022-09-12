@@ -1,0 +1,10 @@
+- name: "Copy VEN script to the workload"
+  win_template:
+    src: ./pairing.ps1.j2
+    dest: C:\pairing.ps1
+
+- name: Pair VENs
+  win_shell: C:\pairing.ps1
+  args:
+    chdir: C:\
+    creates: C:\Program Files\Illumio\illumio-ven-ctl.ps1

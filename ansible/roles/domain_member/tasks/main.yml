@@ -9,15 +9,15 @@
 - name: Point DNS to DC
   win_dns_client:
     adapter_names: "*"
-    ipv4_addresses: "{{ hostvars[item]['ansible_facts']['ip_addresses'][0] }}"
+    ipv4_addresses: "{{ hostvars[item]['ansible_facts']['interfaces'][0].ipv4.address }}"
   loop: "{{ query('inventory_hostnames', 'dc') }}"
 
 - name: Join domain
   win_domain_membership:
-    dns_domain_name: poc.segmentationpov.com
+    dns_domain_name: dundermifflin.com
     hostname: "{{ inventory_hostname_short }}"
-    domain_admin_user: Administrator@poc.segmentationpov.com
-    domain_admin_password: "{{ windows_admin_pwd }}"
+    domain_admin_user: Administrator@dundermifflin.com
+    domain_admin_password: "{{ ansible_password }}"
     state: domain
   register: domain_state
 

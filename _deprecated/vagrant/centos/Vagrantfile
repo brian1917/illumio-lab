@@ -1,0 +1,32 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+servers=[
+  { :hostname => "hostA", :ip => "192.168.200.30",},
+ { :hostname => "hostB", :ip => "192.168.200.31",},
+#  { :hostname => "hostC", :ip => "192.168.200.32",},
+#  { :hostname => "hostD", :ip => "192.168.200.32",}
+]
+
+# Box settings
+Vagrant.configure("2") do |config|
+  servers.each do |machine|
+      config.vm.define machine[:hostname] do |node|
+        node.vm.provider "vmware_fusion" do |vmf|
+          vmf.whitelist_verified = true
+          vmf.gui = false
+          vmf.memory = 2048
+	  vmf.cpus = 1
+        end  
+        node.vm.box = "centos/7"
+        # Set the hostname
+        node.vm.hostname = machine[:hostname]
+        # Set the IP address
+        node.vm.network "private_network", ip: machine[:ip]
+        # Add the common shared folder
+        node.vm.synced_folder '../../common-shared/', '/vagrant'   
+        # Install ILO-CLI
+        node.vm.provision "shell", inline: "rpm -iv /vagrant/illumio-pce-cli-*.rpm", privileged: true
+      end
+  end
+end

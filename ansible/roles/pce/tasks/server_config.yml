@@ -1,0 +1,54 @@
+---
+- name: "Stop iptables service"
+  service:
+    name: iptables
+    state: stopped
+    enabled: false
+  when: "'iptables-services' in ansible_facts.packages"
+
+- name: "Stop firewalld service."
+  service:
+    name: firewalld
+    state: stopped
+    enabled: false
+  when: "'firewalld' in ansible_facts.packages"
+
+- name: "Configure Kernel Parameters"
+  blockinfile:
+    dest: /etc/sysctl.conf
+    block: |
+      kernel.shmmax = 60000000
+      vm.overcommit_memory = 1
+      fs.file-max = 100000
+      net.core.somaxconn = 16384
+
+- name: "Update Security Limits"
+  blockinfile:
+    dest: /etc/security/limits.conf
+    block: |
+      *               soft    core            unlimited
+      *               hard    core            unlimited
+
+- name: "Update Security Limits"
+  blockinfile:
+    dest: /etc/security/limits.conf
+    block: |
+      *               soft    core            unlimited
+      *               hard    core            unlimited
+      *               hard    nproc           65535
+      *               soft    nproc           65535
+      *               hard    nofile          65535
+      *               soft    nofile          65535
+
+- name: "Apply kernel configuration"
+  command: sysctl -p
+
+- name: "Configure alias file"
+  blockinfile:
+    dest: /etc/profile.d/global_aliases.sh
+    create: yes
+    block: |
+      # Illumio-specific aliases and functions
+      alias check="sudo -u ilo-pce /opt/illumio-pce/illumio-pce-env check"
+      alias ctl="sudo -u ilo-pce /opt/illumio-pce/illumio-pce-ctl"
+      alias db="sudo -u ilo-pce /opt/illumio-pce/illumio-pce-db-management"

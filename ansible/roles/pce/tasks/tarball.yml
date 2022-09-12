@@ -1,0 +1,38 @@
+---
+- name: Create ilo-pce group
+  ansible.builtin.group:
+    name: ilo-pce
+    state: present
+
+- name: Create ilo-pce user
+  ansible.builtin.user:
+    name: ilo-pce
+    group: ilo-pce
+    shell: /sbin/nologin
+
+- name: Create directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    recurse: yes
+    owner: ilo-pce
+    group: ilo-pce
+  with_items: ["/opt/illumio-pce", "/var/log/illumio-pce/", "/var/lib/illumio-pce/", "/var/lib/illumio-pce/cert", "/var/lib/illumio-pce/data", "/var/lib/illumio-pce/keys", "/var/lib/illumio-pce/runtime", "/var/lib/illumio-pce/tmp", "/etc/illumio-pce"]
+
+- name: Untar the tarball
+  unarchive:
+    remote_src: no
+    src: "{{ tar_ball }}"
+    dest: /opt/illumio-pce
+  become: yes
+  become_user: ilo-pce
+  args:
+    creates: /opt/illumio-pce/illumio-pce-ctl
+
+- name: Recursively change ownership of /opt/illumio-pce directory
+  ansible.builtin.file:
+    path: /opt/illumio-pce
+    state: directory
+    recurse: yes
+    owner: ilo-pce
+    group: ilo-pce

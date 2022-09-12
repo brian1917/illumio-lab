@@ -1,0 +1,18 @@
+---
+- name: "Copy PCE RPM"
+  ansible.builtin.copy:
+    src: pce.rpm
+    dest: /tmp/
+
+- name: "Copy UI RPM"
+  ansible.builtin.copy:
+    src: pce_ui.rpm
+    dest: /tmp/
+
+- name: Install the RPMs
+  ansible.builtin.yum:
+    name: /tmp/pce.rpm, /tmp/pce_ui.rpm
+    state: present
+
+
+

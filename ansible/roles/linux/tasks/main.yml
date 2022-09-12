@@ -1,0 +1,6 @@
+---
+- name: "Base configuration for Linux workload"
+  import_tasks: base_setup.yml
+
+- name: "Install VEN"
+  import_tasks: pairing_script.yml

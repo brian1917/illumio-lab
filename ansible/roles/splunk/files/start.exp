@@ -1,0 +1,13 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+spawn /opt/splunk/bin/splunk start --accept-license
+
+expect "Please enter an administrator username:"
+send -- "admin\r"
+expect "Please enter a new password:"
+send -- "adminpassword\r"
+expect "Please confirm new password:"
+send -- "adminpassword\r"
+
+expect eof

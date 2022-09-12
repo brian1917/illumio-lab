@@ -1,0 +1,57 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+#############################################
+## MNC Configuration - Update values here ##
+#############################################
+
+# PCE information
+pce_fqdn = "mnc.poc.segmentationpov.com"
+pce_org = "Home MNC"
+pce_user = "brian.pitta@illumio.com"
+pce_pwd = "LocalIllumio1"
+pce_full_name = "Brian Pitta"
+
+# Node information
+core0_ip = "192.168.200.20"
+core1_ip = "192.168.200.21"
+data0_ip = "192.168.200.22"
+data1_ip = "192.168.200.23"
+memory_per_node_mb = 2048
+
+# Shared files
+shared_folder = "../common-shared/" # will be mapped to /vagrant on the VM
+pce_rpm = "/vagrant/pce-sw/illumio-pce-18.2.3-13489.x86_64.rpm" # should be the path on the VM starting with /vagrant
+key = "/vagrant/certs/poc-segmentationpov-com/star_poc_segmentationpov_com.pem" # should be the path on the VM starting with /vagrant
+crt = "/vagrant/certs/poc-segmentationpov-com/star_poc_segmentationpov_com.crt" # should be the path on the VM starting with /vagrant
+bundle = "/vagrant/certs/poc-segmentationpov-com/star_cert_bundle.crt" # should be the path on the VM starting with /vagrant
+
+
+#######################################################
+## You shouldn't need to change anything below this ##
+#######################################################
+
+servers=[
+  { :hostname => "core0", :ip => core0_ip,},
+  { :hostname => "core1", :ip => core1_ip,},
+  { :hostname => "data0", :ip => data0_ip,},
+  { :hostname => "data1", :ip => data1_ip,}
+]
+
+Vagrant.configure("2") do |config|
+  servers.each do |machine|
+      config.vm.define machine[:hostname] do |node|
+        node.vm.provider "vmware_fusion" do |vmf|
+          vmf.whitelist_verified = true
+          vmf.gui = false
+          vmf.memory = memory_per_node_mb
+        end  
+        node.vm.box = "centos/7"
+        node.vm.hostname = machine[:hostname]
+        node.vm.network "private_network", ip: machine[:ip]
+        node.vm.synced_folder shared_folder, '/vagrant'
+        args=[machine[:hostname], machine[:ip], pce_fqdn, servers[0][:ip], pce_rpm, pce_org, pce_user, pce_pwd, pce_full_name, key, crt, bundle]
+        node.vm.provision "shell", path: "install.sh", args: args, privileged: true
+      end
+  end
+end

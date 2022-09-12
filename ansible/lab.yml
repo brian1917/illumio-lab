@@ -1,0 +1,21 @@
+---
+- hosts: pce
+  become: true
+  roles:
+    - pce
+
+- hosts: centos:ubuntu
+  roles:
+    - linux
+
+- hosts: windows:dc:member
+  roles:
+    - windows
+
+- hosts: dc
+  roles:
+    - domain_controller
+
+- hosts: member
+  roles:
+    - domain_member

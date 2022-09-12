@@ -15,8 +15,8 @@
 - name: Install domain
   run_once: true
   win_domain:
-    dns_domain_name: "poc.segmentationpov.com"
-    safe_mode_password: "{{ windows_admin_pwd }}"
+    dns_domain_name: "dundermifflin.com"
+    safe_mode_password: "{{ ansible_password }}"
   register: domaincreate
   ignore_errors: true # Running this step when domain already installed throws errors. If domain does not create other steps will error so ok to ignore here.
   tags:
@@ -34,28 +34,10 @@
     gather_subset: "all"
   delegate_to: "{{ item }}"
   delegate_facts: True
-  loop: "{{ query('inventory_hostnames', 'all:!dc:!member:!ansible') }}"
+  loop: "{{ query('inventory_hostnames', 'all:!dc:!member') }}"
   retries: 10
   delay: 30
 
-- name: Add DNS Records of other workloads
-  run_once: true
-  win_dns_record:
-    name: "{{ hostvars[item].inventory_hostname_short }}"
-    value: "{{ hostvars[item]['ansible_all_ipv4_addresses'][0] }}"
-    type: A
-    zone: "poc.segmentationpov.com"
-    state: present
-  loop: "{{ query('inventory_hostnames', 'all:!dc:!member:!ansible') }}"
-
-- name: Add DNS Records for PCE Public IP
-  run_once: true
-  win_dns_record:
-    name: "{{ pce.org_name }}"
-    value: "{{ lookup('dig', '{{ pce.org_name }}.{{ pce.domain_name }}')}}"
-    type: A
-    zone: "poc.segmentationpov.com"
-    state: present
 
 - name: Create AD groups (will fail many times until AD Web services are reachable)
   run_once: true
@@ -79,7 +61,7 @@
     firstname: "{{ item.firstname }}"
     surname: "{{ item.surname }}"
     company: Dunder Mifflin
-    password: "{{ windows_admin_pwd }}"
+    password: "{{ ansible_password }}"
     password_never_expires: yes
     state: present
     groups: "{{ item.groups }}"
@@ -115,18 +97,3 @@
   args:
     executable: cmd.exe
     creates: C:\RDP.txt
-
-- name: Copy AD Sync Script
-  win_copy:
-    src: ../files/PCE-AD_Sync_v2.4.3.ps1
-    dest: C:\PCE-AD_Sync_v2.4.3.ps1
-  tags:
-    - ADSync
-
-- name: Update PCE with AD groups
-  win_shell: powershell C:\PCE-AD_Sync_v2.4.3.ps1 /sync /url https://{{ pce.org_name }}.{{ pce.domain_name }}:{{ pce.front_end_https_port }} /username "{{ pce.user_email }}" /password "{{ pce.user_pwd }}"
-  args:
-    executable: cmd.exe
-    chdir: C:\
-  tags:
-    - ADSync

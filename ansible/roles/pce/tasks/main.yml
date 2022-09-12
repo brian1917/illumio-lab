@@ -1,0 +1,30 @@
+---
+- name: Gather the RPM package facts
+  package_facts:
+    manager: auto
+  tags:
+    - always
+
+- name: Configure base server
+  import_tasks: server_config.yml
+  tags:
+    - server_config
+
+- name: Install the RPMs
+  import_tasks: rpm.yml
+  tags:
+    - rpm
+
+- name: Install the tarball
+  import_tasks: tarball.yml
+  tags:
+    - tarball
+    - never
+
+- name: Configure the PCEs
+  import_tasks: pce.yml
+  tags:
+    - pce
+
+
+

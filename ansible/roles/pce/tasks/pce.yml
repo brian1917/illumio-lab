@@ -1,0 +1,98 @@
+---
+- name: "Copy private key "
+  copy:
+    src: "{{ item }}"
+    dest: /var/lib/illumio-pce/cert/{{ item }}
+    owner: ilo-pce
+    group: ilo-pce
+    mode: "0400"
+  with_items: ["server.key", "server.crt"]
+
+- name: "Get public IP"
+  ipify_facts:
+    api_url: https://api.ipify.org
+  register: public_ip
+
+- name: "Copy runtime_env.yml template to PCE"
+  template:
+    src: ./runtime_env.yml.j2
+    dest: /etc/illumio-pce/runtime_env.yml
+    owner: ilo-pce
+    group: ilo-pce
+
+- name: "Running illumio-pce-env status to make sure its not running already"
+  command: /opt/illumio-pce/illumio-pce-ctl status -x
+  become: yes
+  become_user: ilo-pce
+  register: pce_status
+  failed_when: pce_status.rc == 2 or  pce_status.rc > 3
+  args:
+    chdir: /tmp/
+
+- name: start pce at runlevel 1
+  command: /opt/illumio-pce/illumio-pce-ctl start --runlevel 1
+  become: yes
+  become_user: ilo-pce
+  register: start_followers
+  until: start_followers.rc == 0
+  retries: 1
+  args:
+    chdir: /tmp/
+
+- name: wait for the pce to start
+  command: illumio-pce-ctl status -w 180
+  become: yes
+  become_user: ilo-pce
+  register: command_result
+  until: command_result.rc == 1
+  failed_when: command_result.rc == 0 or 'STOPPED' in command_result.stdout # -x only works in runlevel 5, don't add it
+  retries: 1
+  args:
+    chdir: /tmp/
+
+- name: "Setting up DB with illumio-pce-db-management"
+  command: /opt/illumio-pce/illumio-pce-db-management setup
+  become: yes
+  become_user: ilo-pce
+  args:
+    chdir: /tmp/
+
+- name: "Starting cluster with illumio-pce-ctl set-runlevel 5"
+  command: /opt/illumio-pce/illumio-pce-ctl set-runlevel 5
+  become: yes
+  become_user: ilo-pce
+  args:
+    chdir: /tmp/
+
+- name: wait for the pce to start
+  command: illumio-pce-ctl status -w 180
+  become: yes
+  become_user: ilo-pce
+  register: command_result
+  until: command_result.rc == 1
+  failed_when: command_result.rc == 0 or 'STOPPED' in command_result.stdout # -x only works in runlevel 5, don't add it
+  retries: 1
+  args:
+    chdir: /tmp/
+
+- name: "Creating org and adding first user with illumio-pce-db-management"
+  command: /opt/illumio-pce/illumio-pce-db-management create-domain --user-name {{ user_email }} --full-name {{ user_full_name }} --org-name {{ org }}
+  environment:
+    ILO_PASSWORD: "{{ user_pwd }}"
+  become: yes
+  become_user: ilo-pce
+  ignore_errors: True
+  args:
+    chdir: /tmp/
+
+- name: "Copy VEN Bundle to PCE"
+  copy:
+    src: ven_bundle.bz2
+    dest: /tmp/
+
+- name: "Install VEN Bundle"
+  command: /opt/illumio-pce/illumio-pce-ctl ven-software-install /tmp/ven_bundle.bz2 --default --orgs all --no-prompt --force
+  become: yes
+  become_user: ilo-pce
+  args:
+    chdir: /tmp/
