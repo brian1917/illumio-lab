@@ -4,9 +4,12 @@
 *.csv
 *.log
 *.rpm
+*.tar.gz
+*.tgz
 *.deb
 *.tar.bz2
 *.msi
+*.exe
 *.tfstate*
 *.key
 *.xlsx
@@ -18,44 +21,20 @@
 *.bz2
 *.hosts
 
-# PCE and VEN files, except README in the directories
-*/pce-sw/*
-!*/pce-sw/README.md
-*/ven-sw/*
-!*/ven-sw/README.md
-*.tar.gz
-*.tgz
-
 # Vagrant
 *.vagrant/
-*config-do-not-edit
 
 # Terraform files
 .terraform/
 
-# Ignore Hardening Scripts - Download from KB
-*ilo-pipgen*
-!ilo-pipgen.yaml
-*ilo-vpngen*
-!ilo-vpngen.yaml
+# Executables
+*/vensim
+*/workloader
 
 # Other
 ansible/hosts
 terraform/variable-files/*
 !terraform/variable-files/sample.json
-common_shared/lxc/*.csv
-!common_shared/lxc/flows.csv
-!common_shared/lxc/workloads_20.csv
-certs/generated-certs
-*VEN_ACTIVATION_CODE*
-generate-cert/output/*
+ipsec-certs/output/*
 
-*pce.yaml
-common-shared/splunk/*
-
-vagrant/mnc-pce/*
-
-# Executables
-*/vensim
-*/workloader
 

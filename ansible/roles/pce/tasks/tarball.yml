@@ -22,7 +22,7 @@
 - name: Untar the tarball
   unarchive:
     remote_src: no
-    src: "{{ tar_ball }}"
+    src: pce-tarball.tgz
     dest: /opt/illumio-pce
   become: yes
   become_user: ilo-pce
