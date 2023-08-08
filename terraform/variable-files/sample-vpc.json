@@ -1,0 +1,20 @@
+{
+    "profile": "profle",
+    "variables_file": "variable-files/pitta-lab.json",
+    "region": "us-east-2",
+    "email_tag": "brian.pitta@illumio.com",
+    "vpc_name": "pitta-lab",
+    "vpc_cidr_block": "192.168.128.0/24",
+    "subnets": {
+      "subnet-1": "192.168.128.0/26",
+      "subnet-2": "192.168.128.64/26",
+      "subnet-3": "192.168.128.128/26",
+      "subnet-4": "192.168.128.192/26"
+    },
+    "private_sshkey": "~/.ssh/id_rsa",
+    "public_sshkey": "~/.ssh/id_rsa.pub",
+    "domain": "segmentationpov.com",
+    "admin_cidr_list": [
+      "1.1.1.1/32"
+    ]
+  }

@@ -1,0 +1,88 @@
+{
+  "profile": "aws-profile",
+  "region": "us-east-2",
+  "variables_file": "variable-files/personal-lab.json",
+  "vpc_name": "pitta-lab",
+  "email_tag": "brian.pitta@illumio.com",
+  "domain": "segmentationpov.com",
+  "windows_admin_pwd": "FakePwd",
+  "amis": {
+    "windows2019": {
+      "ami": "Windows_Server-2019-English-Full-Base-*",
+      "owner": "amazon",
+      "user": "Administrator",
+      "password": "Illumio123"
+    },
+    "windows2016": {
+      "ami": "Windows_Server-2016-English-Full-Base-*",
+      "owner": "amazon",
+      "user": "Administrator",
+      "password": "Illumio123"
+    },
+    "windows2012R2": {
+      "ami": "Windows_Server-2012-R2_RTM-English-64Bit-Base-*",
+      "owner": "amazon",
+      "user": "Administrator",
+      "password": "Illumio123"
+    },
+    "centos7": {
+      "ami": "CentOS Linux 7 x86_64 - 2211",
+      "owner": "125523088429",
+      "user": "centos"
+    },
+    "centos8": {
+      "ami": "CentOS 8 Stream x86_64*",
+      "owner": "125523088429",
+      "user": "centos"
+    },
+    "ubuntu16.04": {
+      "ami": "ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64*",
+      "owner": "099720109477",
+      "user": "ubuntu"
+    },
+    "ubuntu18.04": {
+      "ami": "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64*",
+      "owner": "099720109477",
+      "user": "ubuntu"
+    },
+    "ubuntu20.04": {
+      "ami": "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64*",
+      "owner": "099720109477",
+      "user": "ubuntu"
+    }
+  },
+  "wklds":{
+    "pitta-lab":{
+      "subnet": "subnet-3",
+      "ami": "centos7",
+      "type": "m5.2xlarge",
+      "volume_size_gb": 60,
+      "pce_sg": "true",
+      "open_sg": "false"
+    },
+    "lw01": {
+      "subnet": "subnet-1",
+      "ami": "centos7",
+      "type": "t3.micro",
+      "volume_size_gb": 8,
+      "pce_sg": "false",
+      "open_sg": "false"
+    },
+    "lw02": {
+      "subnet": "subnet-1",
+      "ami": "centos7",
+      "type": "t3.micro",
+      "volume_size_gb": 8,
+      "pce_sg": "false",
+      "open_sg": "false"
+    },
+    "proxy01": {
+      "subnet": "subnet-1",
+      "ami": "centos7",
+      "type": "t3.micro",
+      "volume_size_gb": 8,
+      "pce_sg": "false",
+      "open_sg": "false"
+    }
+  }
+}

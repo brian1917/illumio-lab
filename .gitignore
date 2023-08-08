@@ -34,7 +34,8 @@
 # Other
 ansible/hosts
 terraform/variable-files/*
-!terraform/variable-files/sample.json
+!terraform/variable-files/sample-wklds.json
+!terraform/variable-files/sample-vpc.json
 ipsec-certs/output/*
 ansible/roles/vensim/*
 k8s-lab/f5-ingress-controller
