@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ing-virtual-hosting
+  namespace: nginx
+  annotations:
+    # BIG-IP pool member IP address
+    virtual-server.f5.com/ip: "10.224.1.189"
+    # Load balancing algorithm
+    virtual-server.f5.com/balance: "round-robin"
+    # Specify the port you want to handle requests
+    virtual-server.f5.com/http-port: "8080"
+spec:
+  ingressClassName: f5
+  rules:
+  # URL
+  - host: kp-aks02-guestbook.lot48labs.com
+    http:
+      # path to Service from URL
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: nginx
+              port:
+                number: 80

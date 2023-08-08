@@ -4,7 +4,7 @@
     name: "{{ inventory_hostname_short }}"
   become: true
 
-- name: Install nmap and tcpdump
+- name: Install nmap, tcpdump, and bzip2
   become: true
   yum:
     name: "{{ packages }}"
@@ -12,3 +12,4 @@
     packages:
       - nmap
       - tcpdump
+      - bzip2

@@ -24,6 +24,7 @@
 - name: Configure the PCEs
   import_tasks: pce.yml
   tags:
+    - always
     - pce
 
 

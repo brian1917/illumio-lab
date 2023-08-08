@@ -1,5 +1,5 @@
 ---
-- name: "Base configuration for Linux workload"
+- name: "Base configuration for Windows workload"
   import_tasks: base_setup.yml
 
 - name: "Install VEN"

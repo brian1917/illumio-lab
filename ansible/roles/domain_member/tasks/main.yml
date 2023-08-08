@@ -15,8 +15,9 @@
 - name: Join domain
   win_domain_membership:
     dns_domain_name: dundermifflin.com
-    hostname: "{{ inventory_hostname_short }}"
-    domain_admin_user: Administrator@dundermifflin.com
+    hostname: "{{ hostname }}"
+    # hostname: "{{ inventory_hostname_short }}"
+    domain_admin_user: rswanson@dundermifflin.com
     domain_admin_password: "{{ ansible_password }}"
     state: domain
   register: domain_state

@@ -11,7 +11,7 @@ metadata:
     tier: frontend
 spec:
   # type: NodePort # Use this with the ingress controller
-  type: LoadBalancer
+  type: NodePort
   ports:
     # the port that this service should serve on
   - port: 80

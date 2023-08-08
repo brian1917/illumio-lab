@@ -36,5 +36,7 @@ ansible/hosts
 terraform/variable-files/*
 !terraform/variable-files/sample.json
 ipsec-certs/output/*
+ansible/roles/vensim/*
+k8s-lab/f5-ingress-controller
 
 

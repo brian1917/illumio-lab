@@ -2,6 +2,7 @@
 - hosts: pce
   become: true
   roles:
+    - linux
     - pce
 
 - hosts: centos:ubuntu

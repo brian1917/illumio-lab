@@ -40,13 +40,14 @@
     chdir: /tmp/
 
 - name: wait for the pce to start
-  command: illumio-pce-ctl status -w 180
+  command: /opt/illumio-pce/illumio-pce-ctl status -w 180 -x
   become: yes
   become_user: ilo-pce
   register: command_result
   until: command_result.rc == 1
-  failed_when: command_result.rc == 0 or 'STOPPED' in command_result.stdout # -x only works in runlevel 5, don't add it
-  retries: 1
+  failed_when: command_result.rc != 1
+  delay: 10
+  retries: 20
   args:
     chdir: /tmp/
 
@@ -65,25 +66,25 @@
     chdir: /tmp/
 
 - name: wait for the pce to start
-  command: illumio-pce-ctl status -w 180
+  command: /opt/illumio-pce/illumio-pce-ctl status -w 180 -x
   become: yes
   become_user: ilo-pce
   register: command_result
-  until: command_result.rc == 1
-  failed_when: command_result.rc == 0 or 'STOPPED' in command_result.stdout # -x only works in runlevel 5, don't add it
-  retries: 1
+  until: command_result.rc == 0
+  delay: 10
+  retries: 20
   args:
     chdir: /tmp/
 
-- name: "Creating org and adding first user with illumio-pce-db-management"
-  command: /opt/illumio-pce/illumio-pce-db-management create-domain --user-name {{ user_email }} --full-name {{ user_full_name }} --org-name {{ org }}
-  environment:
-    ILO_PASSWORD: "{{ user_pwd }}"
-  become: yes
-  become_user: ilo-pce
-  ignore_errors: True
-  args:
-    chdir: /tmp/
+# - name: "Creating org and adding first user"
+#   command: /opt/illumio-pce/illumio-pce-db-management create-domain --user-name {{ user_email }} --full-name {{ user_full_name }} --org-name {{ org }}
+#   environment:
+#     ILO_PASSWORD: "{{ user_pwd }}"
+#   become: yes
+#   become_user: ilo-pce
+#   ignore_errors: True
+#   args:
+#     chdir: /tmp/
 
 - name: "Copy VEN Bundle to PCE"
   copy:

@@ -1,0 +1,18 @@
+# SOURCE: https://cloud.google.com/kubernetes-engine/docs/tutorials/guestbook
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: nginx
+  annotations:
+    com.illumio.role: nginx
+  labels:
+    app: nginx
+spec:
+  # type: NodePort # Use this with the ingress controller
+  type: NodePort
+  ports:
+    # the port that this service should serve on
+  - port: 80
+  selector:
+    app: nginx
